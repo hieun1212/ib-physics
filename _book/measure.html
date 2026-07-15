@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" xml:lang="vi"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Đo lường và Sai số – Vật lý</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./motion.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./measure.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Đo lường và Sai số</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Vật lý</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./measure.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Đo lường và Sai số</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./motion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Động học</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#đại-lượng-trong-vật-lý" id="toc-đại-lượng-trong-vật-lý" class="nav-link active" data-scroll-target="#đại-lượng-trong-vật-lý"><span class="header-section-number">1.1</span> Đại lượng trong vật lý</a>
+  <ul>
+  <li><a href="#đại-lượng-và-đơn-vị" id="toc-đại-lượng-và-đơn-vị" class="nav-link" data-scroll-target="#đại-lượng-và-đơn-vị">Đại lượng và đơn vị</a></li>
+  <li><a href="#đơn-vị-cơ-bản-và-đơn-vị-dẫn-xuất" id="toc-đơn-vị-cơ-bản-và-đơn-vị-dẫn-xuất" class="nav-link" data-scroll-target="#đơn-vị-cơ-bản-và-đơn-vị-dẫn-xuất">Đơn vị cơ bản và Đơn vị dẫn xuất</a></li>
+  <li><a href="#số-có-nghĩa" id="toc-số-có-nghĩa" class="nav-link" data-scroll-target="#số-có-nghĩa">Số có nghĩa</a></li>
+  <li><a href="#ký-hiệu-khoa-học" id="toc-ký-hiệu-khoa-học" class="nav-link" data-scroll-target="#ký-hiệu-khoa-học">Ký hiệu khoa học</a></li>
+  </ul></li>
+  <li><a href="#sai-số" id="toc-sai-số" class="nav-link" data-scroll-target="#sai-số"><span class="header-section-number">1.2</span> Sai số</a>
+  <ul>
+  <li><a href="#accuracy-và-precision" id="toc-accuracy-và-precision" class="nav-link" data-scroll-target="#accuracy-và-precision">Accuracy và Precision</a></li>
+  <li><a href="#tính-toán-sai-số" id="toc-tính-toán-sai-số" class="nav-link" data-scroll-target="#tính-toán-sai-số">Tính toán sai số</a></li>
+  </ul></li>
+  <li><a href="#đại-lượng-có-hướng-vector-và-đại-lượng-vô-hướng-scalar" id="toc-đại-lượng-có-hướng-vector-và-đại-lượng-vô-hướng-scalar" class="nav-link" data-scroll-target="#đại-lượng-có-hướng-vector-và-đại-lượng-vô-hướng-scalar"><span class="header-section-number">1.3</span> Đại lượng có hướng (vector) và đại lượng vô hướng (scalar)</a>
+  <ul>
+  <li><a href="#phép-toán-với-vector" id="toc-phép-toán-với-vector" class="nav-link" data-scroll-target="#phép-toán-với-vector">Phép toán với vector</a></li>
+  <li><a href="#phân-tích-vector" id="toc-phân-tích-vector" class="nav-link" data-scroll-target="#phân-tích-vector">Phân tích vector</a></li>
+  <li><a href="#dựng-lại-vector-dựa-trên-các-thành-phần-của-nó" id="toc-dựng-lại-vector-dựa-trên-các-thành-phần-của-nó" class="nav-link" data-scroll-target="#dựng-lại-vector-dựa-trên-các-thành-phần-của-nó">Dựng lại vector dựa trên các thành phần của nó</a></li>
+  </ul></li>
+  <li><a href="#bài-tập" id="toc-bài-tập" class="nav-link" data-scroll-target="#bài-tập"><span class="header-section-number">1.4</span> Bài tập</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Đo lường và Sai số</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="đại-lượng-trong-vật-lý" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="đại-lượng-trong-vật-lý"><span class="header-section-number">1.1</span> Đại lượng trong vật lý</h2>
+<section id="đại-lượng-và-đơn-vị" class="level3">
+<h3 class="anchored" data-anchor-id="đại-lượng-và-đơn-vị">Đại lượng và đơn vị</h3>
+<p>Đại lượng vật lý là những thứ có thể đo lường được, chẳng hạn như khối lượng, độ dài, thời gian, cường độ dòng điện. Có thể chia đại lượng làm hai loại:</p>
+<ul>
+<li>Đại lượng cơ bản:</li>
+<li>Đại lượng dẫn xuất:</li>
+</ul>
+</section>
+<section id="đơn-vị-cơ-bản-và-đơn-vị-dẫn-xuất" class="level3">
+<h3 class="anchored" data-anchor-id="đơn-vị-cơ-bản-và-đơn-vị-dẫn-xuất">Đơn vị cơ bản và Đơn vị dẫn xuất</h3>
+<p>Đối với các đại lượng cơ bản, hệ đơn vị đo lường quốc tế (SI) sử dụng 7 đơn vị đo lường cơ bản:</p>
+<ol type="1">
+<li>Mét (m): khoảng cách ánh sáng di chuyển được trong chân không trong thời gian <span class="math inline">\(\frac{1}{299 792 458}\)</span> giây.</li>
+<li>Kilogram (kg): khối lượng của khối kilogram chuẩn quốc tế được Văn phòng Cân đo Quốc tế (BIPM) lưu giữ.</li>
+<li>Giây (s): khoảng thời gian bằng 9 192 631 770 lần chu kỳ của bức xạ điện từ phát ra bởi nguyên tử Caesium-133.</li>
+<li>Ampere (A):</li>
+<li>Kelvin (K)</li>
+<li>Mole (mol)</li>
+<li>Candela (cd)</li>
+</ol>
+<p>Đối với các đại lượng còn lại (đại lượng dẫn xuất), đơn vị đo được rút ra từ các đơn vị cơ bản thông qua các công thức tính. Ví dụ, đơn vị đo áp suất, (Pa) bằng m^-1 kg s^-2.</p>
+</section>
+<section id="số-có-nghĩa" class="level3">
+<h3 class="anchored" data-anchor-id="số-có-nghĩa">Số có nghĩa</h3>
+<p>Số có nghĩa là các chữ số quan trọng mang lại thông tin trong một kết quả hoặc số đo.</p>
+<p>Các quy tắc xác định số có nghĩa:</p>
+<ol type="1">
+<li>Các chữ số khác không luôn có nghĩa. Ví dụ, số 345 có 3 chữ số có nghĩa (3 s.f)</li>
+<li>Số 0 nằm giữa các số khác 0 cũng là số có nghĩa. Ví dụ, số 3405 có 4 chữ số có nghĩa (4 s.f)</li>
+<li>Số 0 nằm ngoài cùng bên trái thì không có nghĩa. Ví dụ, 0.345 (3 s.f), 0.034 (2 s.f)</li>
+<li>Số 0 nằm sau dấu thập phân và được viết sau một số khác 0 thì có nghĩa. Ví dụ, 1.034 (4 s.f); 1.00 (3 s.f); 0.34500 (5 s.f); 0.003 (1 s.f)</li>
+<li>Dãy số 0 ở đuôi không có nghĩa, trừ khi được viết cùng dấu thập phân. Ví dụ, 400 (1 s.f); 400. (3 s.f)</li>
+</ol>
+</section>
+<section id="ký-hiệu-khoa-học" class="level3">
+<h3 class="anchored" data-anchor-id="ký-hiệu-khoa-học">Ký hiệu khoa học</h3>
+<p>Ký hiệu khoa học là cách viết một số dưới dạng <span class="math inline">\(a \times 10^b\)</span> với <span class="math inline">\(a\)</span> là một số thực, <span class="math inline">\(1 \leq a \leq 10\)</span>, và <span class="math inline">\(b\)</span> là số nguyên âm hoặc dương. Số chữ số xuất hiện trong <span class="math inline">\(a\)</span> là số chữ số có nghĩa của nó.</p>
+<!-- Viết lại câu này cho rõ ý hơn -->
+<p>Khi nhân hoặc chia hai số, số chữ số có nghĩa trong kết quả phải bằng với số chữ số có nghĩa ít nhất trong phép tính. Ví dụ</p>
+<p><span class="math display">\[
+\begin{aligned}
+  &amp; 23 \times 578= 13 294 \approx  1.3 \times 10^4 \\
+  &amp; \frac{6.244}{1.25} = 4.9952\ldots \approx 5.00
+\end{aligned}
+\]</span></p>
+</section>
+</section>
+<section id="sai-số" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="sai-số"><span class="header-section-number">1.2</span> Sai số</h2>
+<p>Các sai số khi đo lường một đại lượng gồm hai nhóm chính: sai số hệ thống, và sai số ngẫu nhiên</p>
+<ul>
+<li>Sai số hệ thống (systematic error) là những sai lệch trong đo lường theo cùng một hướng: đều lớn, hoặc đều nhỏ. Sai số hệ thống có thể là kết quả của kỹ thuật đo lường.</li>
+<li>Sai số ngẫu nhiên (random uncertainty) xảy ra khi các kết quả đo lường có giá trị biến động: đôi khi lớn, đôi khi nhỏ. Không như sai số hệ thống, sai số ngẫu nhiên không lệch theo một hướng nhất định.</li>
+</ul>
+<section id="accuracy-và-precision" class="level3">
+<h3 class="anchored" data-anchor-id="accuracy-và-precision">Accuracy và Precision</h3>
+<p>Một phép đo được gọi là accurate if sai số hệ thống nhỏ, nghĩa là các kết quả đo được gần với giá trị đúng của đại lượng. Một phép đo được gọi là precise nếu nó có sai số ngẫu nhiên nhỏ, nghĩa là các kết quả đo được gần bằng nhau.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/accuracy-precision.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%"></p>
+</figure>
+</div>
+</section>
+<section id="tính-toán-sai-số" class="level3">
+<h3 class="anchored" data-anchor-id="tính-toán-sai-số">Tính toán sai số</h3>
+<p>Nếu <span class="math inline">\(a = a_0 \pm \Delta a\)</span>:</p>
+<ul>
+<li>Sai số tuyệt đối <span class="math inline">\(= \Delta a\)</span></li>
+<li>Sai số tương đối <span class="math inline">\(\delta a = \frac{\Delta a}{a_0}\)</span></li>
+<li>Sai số phần trăm <span class="math inline">\(= \frac{\Delta a}{a_0} \times 100\%\)</span></li>
+</ul>
+<p>Để xác định sai số trong kết quả của một đại lượng được tính từ các đại lượng khác. Ta sử dụng các quy tắc sau:</p>
+<p><strong>Quy tắc cộng trừ</strong>: Nếu <span class="math inline">\(Q = a + b\)</span> hoặc <span class="math inline">\(Q = a - b\)</span> hoặc <span class="math inline">\(Q = a + b - c\)</span> thì sai số tuyệt đối của <span class="math inline">\(Q\)</span> bằng tổng các sai số tuyệt đối của các đại lượng thành phần.</p>
+<p><span class="math display">\[
+\begin{aligned}
+    &amp;Q = a + b &amp;\implies &amp; \Delta Q = \Delta a + \Delta b \\
+    &amp;Q = a - b &amp;\implies &amp; \Delta Q = \Delta a + \Delta b \\
+    &amp;Q = a + b - c &amp;\implies &amp; \Delta Q = \Delta a + \Delta b + \Delta c
+\end{aligned}
+\]</span></p>
+<p><strong>Quy tắc nhân chia</strong>: Nếu <span class="math inline">\(Q = ab\)</span> hoặc <span class="math inline">\(Q = \frac{a}{b}\)</span> thì sai số tương đối của <span class="math inline">\(Q\)</span> bằng tổng các sai số tương đối của các đại lượng thành phần.</p>
+<p><span class="math display">\[
+  \begin{align}
+    &amp; Q = ab &amp;\implies &amp; \delta Q = \delta a + \delta b \\
+    &amp; Q = \frac{a}{b} &amp;\implies  &amp; \delta Q = \delta a + \delta b \\
+    &amp; Q = \frac{ab}{c} &amp;\implies  &amp; \delta Q = \delta a + \delta b + \delta c
+  \end{align}
+\]</span></p>
+<p><strong>Quy tắc mũ và căn thức</strong>: Sai số tương đối của kết quả bằng sai số tương đối của các đại lượng thành phần nhân với giá trị tuyệt đối của số mũ tương ứng.</p>
+<p><span class="math display">\[
+  \begin{align}
+    Q = a^{n} &amp;\implies \delta Q = \vert n \vert \delta a \\
+    Q = \sqrt[n]{a} &amp;\implies \delta Q = \lvert \frac{1}{n} \rvert \delta a
+  \end{align}
+\]</span></p>
+</section>
+</section>
+<section id="đại-lượng-có-hướng-vector-và-đại-lượng-vô-hướng-scalar" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="đại-lượng-có-hướng-vector-và-đại-lượng-vô-hướng-scalar"><span class="header-section-number">1.3</span> Đại lượng có hướng (vector) và đại lượng vô hướng (scalar)</h2>
+<p>Các đại lượng được xác định hoàn toàn bởi độ lớn (như thời gian, khoảng cách, khối lượng, tốc độ, nhiệt độ) được gọi là các đại lượng vô hướng (scalar). Ngược lại, các đại lượng vừa có độ lớn vừa có hướng được gọi là các đại lượng có hướng (vector).</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Vector</th>
+<th>Scalar</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Độ dịch chuyển</td>
+<td>Khoảng cách</td>
+</tr>
+<tr class="even">
+<td>vận tốc</td>
+<td>Tốc độ</td>
+</tr>
+<tr class="odd">
+<td>Trọng lượng</td>
+<td>Khối lượng</td>
+</tr>
+<tr class="even">
+<td>Gia tốc</td>
+<td>Thời gian</td>
+</tr>
+<tr class="odd">
+<td>Lực</td>
+<td>Mật độ</td>
+</tr>
+<tr class="even">
+<td>Điện trường</td>
+<td>Điện thế</td>
+</tr>
+<tr class="odd">
+<td>Từ trường</td>
+<td>Điện tích</td>
+</tr>
+<tr class="even">
+<td>Trọng trường</td>
+<td>Thế năng trọng trường</td>
+</tr>
+<tr class="odd">
+<td>Quán tính</td>
+<td>Nhiệt độ</td>
+</tr>
+<tr class="even">
+<td>Diện tích</td>
+<td>Thể tích</td>
+</tr>
+<tr class="odd">
+<td>Vận tốc góc</td>
+<td>Công</td>
+</tr>
+</tbody>
+</table>
+<p>Một vector được biểu diễn bằng một mũi tên. Hướng của mũi tên thể hiện hướng của vector. Độ dài của mũi tên thể hiện độ lớn của nó.</p>
+<p>Hai vector được gọi là bằng nhau nếu chúng có cùng hướng và cùng độ dài.</p>
+<section id="phép-toán-với-vector" class="level3">
+<h3 class="anchored" data-anchor-id="phép-toán-với-vector">Phép toán với vector</h3>
+<p><strong>Phép cộng vector</strong>. Để cộng 2 vector, ta áp dụng quy tắc tam giác hoặc quy tắc hình bình hành.</p>
+<p><img src="images/add-vector.png" class="img-fluid"></p>
+<p><strong>Phép trừ vector</strong>. Để tính hiệu 2 vector <span class="math inline">\(d - e\)</span>, ta lấy vector <span class="math inline">\(d\)</span> cộng với vector đối của vector <span class="math inline">\(e\)</span>.</p>
+<p><img src="images/subtract-vector.png" class="img-fluid"></p>
+<p><strong>Phép nhân vector với một số</strong>. Khi nhân vector <span class="math inline">\(a\)</span> với một số <span class="math inline">\(k\)</span>, ta được một vector mới, ký hiệu là <span class="math inline">\(ka\)</span>, có độ dài gấp <span class="math inline">\(\vert k \vert\)</span> lần vector <span class="math inline">\(a\)</span> và hướng phụ thuộc vào dấu của <span class="math inline">\(k\)</span>. Nếu <span class="math inline">\(k &gt; 0\)</span>, vector mới cùng hướng với vector <span class="math inline">\(a\)</span>, nếu <span class="math inline">\(k &lt; 0\)</span>, vector mới ngược hướng với vector <span class="math inline">\(a\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/multiply-vector.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</section>
+<section id="phân-tích-vector" class="level3">
+<h3 class="anchored" data-anchor-id="phân-tích-vector">Phân tích vector</h3>
+<p>Cho vector <span class="math inline">\(A\)</span> trong hệ trục tọa độ Oxy, thành phần theo trục <span class="math inline">\(x\)</span> và trục <span class="math inline">\(y\)</span> của <span class="math inline">\(A\)</span> được gọi là <span class="math inline">\(A_x, A_y\)</span>, được tính bằng</p>
+<p><span class="math display">\[
+  \begin{align}
+    A_x = A \cos \theta \\
+    A_y = A \sin \theta
+  \end{align}
+\]</span></p>
+<p><img src="images/vector-component.png" class="img-fluid"></p>
+<p>với <span class="math inline">\(\theta\)</span> là góc tạo bởi vector và chiều dương của trục <span class="math inline">\(Ox\)</span>.</p>
+</section>
+<section id="dựng-lại-vector-dựa-trên-các-thành-phần-của-nó" class="level3">
+<h3 class="anchored" data-anchor-id="dựng-lại-vector-dựa-trên-các-thành-phần-của-nó">Dựng lại vector dựa trên các thành phần của nó</h3>
+<p>Giả sử ta có các thành phần theo trục <span class="math inline">\(Ox\)</span> và <span class="math inline">\(Oy\)</span> của một vector <span class="math inline">\(A\)</span> là <span class="math inline">\(A_x\)</span> và <span class="math inline">\(A_y\)</span>. Để tính độ dài và góc $$ tạo bởi <span class="math inline">\(A\)</span> và trục <span class="math inline">\(Ox\)</span>, ta làm như sau: <span class="math display">\[
+  A = \sqrt{A_x ^2 + A_y ^2}
+\]</span> và hướng của vector là <span class="math display">\[
+  \tan \theta = \frac{A_y}{A_x}
+\]</span></p>
+<p>Ví dụ: Cho vector <span class="math inline">\(A\)</span> có độ dài bằng 8.0 đơn vị, vector <span class="math inline">\(B\)</span> có độ dài bằng 12 đơn vị. Hướng của của chúng được thể hiện như hình vẽ.</p>
+<p>Các vector thành phần của <span class="math inline">\(A\)</span> và <span class="math inline">\(B\)</span> là: <span class="math display">\[
+  \begin{align}
+    A_x &amp;= A \cos 30^\circ  = 6.928 \\
+    A_y &amp;= A \sin 30^\circ  = 4 \\
+    \\  
+    B_x &amp;= B\cos 80^\circ = 2.084 \\
+    B_y &amp;= B\sin 80^\circ = 11.818
+  \end{align}
+\]</span> Vector tổng <span class="math inline">\(C = A + B\)</span> có thành phần như sau: <span class="math display">\[
+  \begin{align}
+    C_x &amp;= A_x + B_x = 9.012 \\
+    C_y &amp;= A_y + B_y = 15.818
+  \end{align}
+\]</span> Độ dài của vector <span class="math inline">\(C\)</span> là <span class="math display">\[
+  C = \sqrt{C_x ^2 + C_y ^2} = 18.205
+\]</span> và hướng của nó là <span class="math display">\[
+  \begin{align}
+    \tan \theta &amp;= \frac{C_y}{C_x} = \frac{15.818}{9.012} \\
+    \theta &amp;\thickapprox  60.3^\circ
+  \end{align}
+\]</span></p>
+</section>
+</section>
+<section id="bài-tập" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="bài-tập"><span class="header-section-number">1.4</span> Bài tập</h2>
+<p><strong>Bài 1.</strong> Bài tập 4.1, 4.4, 4.11, 4.12, 4.21 sách bài tập Toán lớp 10 - KNTT.</p>
+<p><strong>Bài 2.</strong> Một vector vận tốc có độ lớn 1.2 m/s hướng theo phương ngang. Một vector vận tốc khác có độ lớn 2.0 m/s. Biết tổng hai vector trên hướng lên theo phương thẳng đứng. Tìm độ lớn và hướng của vector vận tốc thứ 2.</p>
+<p><strong>Bài 3.</strong> Một người đi bộ 5.0 km về hướng Đông, sau đó đi 3.0 km theo hướng Bắc và đi tiếp 4.0 km theo hướng Đông. Xác định vị trí cuối cùng của người đó (so với vị trí ban đầu).</p>
+<p><strong>Bài 4.</strong> Một vật chuyển động theo quỹ đạo tròn có bán kính 3.0 m với vận tốc không đổi là 6.0 m/s. Vector vận tốc tại mọi thời điểm luôn nằm trên đường tiếp tuyến của quỹ đạo tròn. Vật đó xuất phát ở A (vị trí 12h), đi qua B (vị trí 3h) và đến C (vị trí 6h). Xác định sự thay đổi vector vận tốc giữa A và B, và giữa B và C.</p>
+<p><strong>Bài 5.</strong> Xác định các thành phần của vector W theo các trục thể hiện trong hình vẽ. <img src=".\images/exercise1-19.png" class="img-fluid"></p>
+<p><strong>Bài 6.</strong> Trong mỗi hình sau, xác định thành phần của vector theo các trục tọa độ. Biết mỗi vector có độ dài 10.0 đơn vị. <img src=".\images/exercise44.png" class="img-fluid"></p>
+<p><strong>Bài 7.</strong> Xác định độ lớn và hướng của vector với thành phần cho như sau:</p>
+<ol type="1">
+<li><span class="math inline">\(A_x = -4.0\)</span> cm, <span class="math inline">\(A_y = -4.0\)</span> cm.</li>
+<li><span class="math inline">\(A_x = 124\)</span> km, <span class="math inline">\(A_y = -158\)</span> km.</li>
+<li><span class="math inline">\(A_x = 0\)</span>, <span class="math inline">\(A_y = -5.0\)</span> m.</li>
+<li><span class="math inline">\(A_x = 8.0\)</span> N, <span class="math inline">\(A_y = 0\)</span>.</li>
+</ol>
+<p><strong>Bài 8.</strong> Cho vector <span class="math inline">\(A\)</span> có độ lớn bằng 12.0 đơn vị, tạo với chiều dương của trục <span class="math inline">\(Ox\)</span> một góc <span class="math inline">\(30^\circ\)</span>. Vector <span class="math inline">\(B\)</span> có độ lớn bằng 8.0 đơn vị và tạo với chiều dương của trục <span class="math inline">\(Ox\)</span> một góc <span class="math inline">\(80^\circ\)</span>. Xác định</p>
+<ol type="1">
+<li><span class="math inline">\(A + B\)</span></li>
+<li><span class="math inline">\(A - B\)</span></li>
+<li><span class="math inline">\(A - 2B\)</span></li>
+</ol>
+<p><strong>Bài 9.</strong> Cho các thành phần của vector <span class="math inline">\(A\)</span> và <span class="math inline">\(B\)</span> như sau: <span class="math inline">\(A_x = 2.00, A_y = 3.00, B_x = -2.00, B_y = 5.00\)</span>. Tìm độ lớn và hướng của vector sau</p>
+<ol type="1">
+<li><span class="math inline">\(A\)</span></li>
+<li><span class="math inline">\(B\)</span></li>
+<li><span class="math inline">\(A + B\)</span></li>
+<li><span class="math inline">\(A - B\)</span></li>
+<li><span class="math inline">\(2A - B\)</span></li>
+</ol>
+<p><strong>Bài 10.</strong> Cho hai vector có độ lớn và góc như sau (góc được tính từ chiều dương của Ox theo ngược chiều kim đồng hồ), xác định độ lớn và hướng của vector tổng</p>
+<ol type="1">
+<li><span class="math inline">\(12.0\)</span> N với góc <span class="math inline">\(20^\circ\)</span>, và <span class="math inline">\(14.0\)</span> N với góc <span class="math inline">\(50^\circ\)</span>.</li>
+<li><span class="math inline">\(15.0\)</span> N với góc <span class="math inline">\(15^\circ\)</span>, và <span class="math inline">\(18.0\)</span> N với góc <span class="math inline">\(105^\circ\)</span>.</li>
+<li><span class="math inline">\(20.0\)</span> N với góc <span class="math inline">\(40^\circ\)</span>, và <span class="math inline">\(15.0\)</span> N với góc <span class="math inline">\(310^\circ\)</span>.</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./motion.html" class="pagination-link" aria-label="Động học">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Động học</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

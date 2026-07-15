@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" xml:lang="vi"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Động học – Vật lý</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./measure.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./motion.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Động học</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Vật lý</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./measure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Đo lường và Sai số</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./motion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Động học</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#độ-dịch-chuyển-và-quãng-đường-đi-được" id="toc-độ-dịch-chuyển-và-quãng-đường-đi-được" class="nav-link active" data-scroll-target="#độ-dịch-chuyển-và-quãng-đường-đi-được"><span class="header-section-number">2.1</span> Độ dịch chuyển và quãng đường đi được</a></li>
+  <li><a href="#tốc-độ-và-vận-tốc" id="toc-tốc-độ-và-vận-tốc" class="nav-link" data-scroll-target="#tốc-độ-và-vận-tốc"><span class="header-section-number">2.2</span> Tốc độ và vận tốc</a></li>
+  <li><a href="#chuyển-động-thẳng-đều" id="toc-chuyển-động-thẳng-đều" class="nav-link" data-scroll-target="#chuyển-động-thẳng-đều"><span class="header-section-number">2.3</span> Chuyển động thẳng đều</a></li>
+  <li><a href="#chuyển-động-thẳng-biến-đổi-đều" id="toc-chuyển-động-thẳng-biến-đổi-đều" class="nav-link" data-scroll-target="#chuyển-động-thẳng-biến-đổi-đều"><span class="header-section-number">2.4</span> Chuyển động thẳng biến đổi đều</a></li>
+  <li><a href="#rơi-tự-do" id="toc-rơi-tự-do" class="nav-link" data-scroll-target="#rơi-tự-do"><span class="header-section-number">2.5</span> Rơi tự do</a></li>
+  <li><a href="#chuyển-động-ném" id="toc-chuyển-động-ném" class="nav-link" data-scroll-target="#chuyển-động-ném"><span class="header-section-number">2.6</span> Chuyển động ném</a>
+  <ul>
+  <li><a href="#chuyển-động-ném-ngang" id="toc-chuyển-động-ném-ngang" class="nav-link" data-scroll-target="#chuyển-động-ném-ngang">Chuyển động ném ngang</a></li>
+  <li><a href="#chuyển-động-ném-xiên" id="toc-chuyển-động-ném-xiên" class="nav-link" data-scroll-target="#chuyển-động-ném-xiên">Chuyển động ném xiên</a></li>
+  </ul></li>
+  <li><a href="#bài-tập-minh-họa" id="toc-bài-tập-minh-họa" class="nav-link" data-scroll-target="#bài-tập-minh-họa">Bài tập minh họa</a></li>
+  <li><a href="#bài-tập-tự-luyện" id="toc-bài-tập-tự-luyện" class="nav-link" data-scroll-target="#bài-tập-tự-luyện">Bài tập tự luyện</a></li>
+  <li><a href="#câu-hỏi-trắc-nghiệm" id="toc-câu-hỏi-trắc-nghiệm" class="nav-link" data-scroll-target="#câu-hỏi-trắc-nghiệm">Câu hỏi trắc nghiệm</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Động học</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="độ-dịch-chuyển-và-quãng-đường-đi-được" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="độ-dịch-chuyển-và-quãng-đường-đi-được"><span class="header-section-number">2.1</span> Độ dịch chuyển và quãng đường đi được</h2>
+<p><strong>Vị trí của vật chuyển động tại các thời điểm:</strong></p>
+<p>Để xác định vị trí của vật chuyển động tại các thời điểm ta chọn một hệ tọa độ gắn với vật làm mốc, một mốc thời gian và đồng hồ đo thời gian, gọi là <strong><em>hệ quy chiếu</em></strong>.</p>
+<p>Nếu vật chuyển động trên một đường thẳng, để khảo sát vị trí của vật ta chỉ cần chọn một trục Ox trùng với quỹ đạo của vật.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/x-axis.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+<p>Nếu vật chuyển động trong một mặt phẳng, để khảo sát vị trí của vật ta chọn hai trục Ox, Oy vuông góc nhau.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/xy-axes.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+<p><strong>Độ dịch chuyển:</strong></p>
+<p>Độ dịch chuyển là một vectơ cho biết độ dài, phương và hướng của sự thay đổi vị trí của vật. Kí hiệu là <span class="math inline">\(\vec{d}\)</span>.</p>
+<p>Vật đi từ A đến B rồi đi từ B đến C thì độ dịch chuyển là vector $ = $.</p>
+<p><em>(Sơ đồ minh họa: Vật di chuyển từ <span class="math inline">\(A \rightarrow B \rightarrow C\)</span>, độ dịch chuyển tổng hợp là <span class="math inline">\(\vec{d} = \vec{AC}\)</span>)</em></p>
+<p><strong>Độ dịch chuyển và quãng đường:</strong> Chỉ khi vật chuyển động thẳng theo một chiều (không đổi chiều) thì độ lớn của độ dịch chuyển bằng với quãng đường đi được của vật. Còn các trường hợp còn lại thì độ dịch chuyển và quãng đường là khác nhau.</p>
+<p><img src="images/displacement_distance.png" class="img-fluid"></p>
+<p><strong>Tổng hợp độ dịch chuyển:</strong> Độ dịch chuyển là đại lượng vectơ nên khi tổng hợp độ dịch chuyển sẽ tuân theo quy tắc cộng vectơ (quy tắc hình bình hành). Trong ví dụ trên ta có: <span class="math inline">\(\vec{d} = \overrightarrow{AB} + \overrightarrow{BC}\)</span></p>
+</section>
+<section id="tốc-độ-và-vận-tốc" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="tốc-độ-và-vận-tốc"><span class="header-section-number">2.2</span> Tốc độ và vận tốc</h2>
+<p><strong>Tốc độ:</strong> Đặc trưng cho sự nhanh hay chậm của chuyển động của vật.</p>
+<ul>
+<li>Tốc độ trung bình: <span class="math inline">\(\displaystyle \vert v \vert = \frac{s}{t}\)</span> hay <span class="math inline">\(\displaystyle \vert v \vert = \frac{\Delta s}{\Delta t}\)</span></li>
+<li>Tốc độ tức thời là tốc độ tại một thời điểm xác định.</li>
+<li>Đơn vị của tốc độ: m/s ; km/h ; …</li>
+</ul>
+<p><em>(Chú thích hình: Tốc kế chỉ tốc độ tức thời của xe)</em></p>
+<p><strong>Vận tốc:</strong> Đặc trưng cho sự nhanh hay chậm và phương chiều của chuyển động của vật, vận tốc là đại lượng vectơ.</p>
+<ul>
+<li>Vận tốc trung bình: <span class="math inline">\(\displaystyle \vec{v} = \frac{\vec{d}}{t}\)</span> hay <span class="math inline">\(\displaystyle \vec{v} = \frac{\Delta \vec{d}}{\Delta t}\)</span></li>
+<li>Vận tốc tức thời là vận tốc tại một thời điểm xác định.</li>
+<li>Đơn vị của vận tốc: m/s ; km/h ; …</li>
+</ul>
+<p><strong>Công thức cộng vận tốc:</strong> <span class="math inline">\(\vec{v}_{1,3} = \vec{v}_{1,2} + \vec{v}_{2,3}\)</span> \ (vận tốc là đại lượng vectơ nên cộng vận tốc phải theo quy tắc cộng vectơ, quy tắc hình bình hành).</p>
+<p><em>(Chú thích hình: Người ngồi trong ô tô đang chuyển động thấy giọt mưa rơi xiên)</em></p>
+</section>
+<section id="chuyển-động-thẳng-đều" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="chuyển-động-thẳng-đều"><span class="header-section-number">2.3</span> Chuyển động thẳng đều</h2>
+<p>Chuyển động thẳng đều là chuyển động có quỹ đạo là đường thẳng và đi được những quãng đường bằng nhau trong những khoảng thời gian như nhau. Trong chuyển động thẳng đều, vận tốc là đại lượng không đổi.</p>
+<p><span class="math display">\[
+  v = \frac{\Delta d}{\Delta t}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(v\)</span> là vận tốc (<span class="math inline">\(\text{km/h}, \text{m/s}\)</span>)</li>
+<li><span class="math inline">\(d\)</span> là độ dịch chuyển (<span class="math inline">\(\text{km}, \text{m}\)</span>)</li>
+<li><span class="math inline">\(t\)</span> là thời gian chuyển động (<span class="math inline">\(\text{h}, \text{s}\)</span>)</li>
+</ul>
+<p><strong>Phương trình chuyển động thẳng đều:</strong> Ta có: <span class="math inline">\(\displaystyle v = \frac{\Delta d}{\Delta t} = \frac{x - x_0}{t - 0}\)</span> <span class="math inline">\(\implies x = x_0 + v \cdot t\)</span></p>
+<p><em>Trong đó:</em></p>
+<ul>
+<li><span class="math inline">\(x_0\)</span> là tọa độ của vật tại thời điểm ban đầu <span class="math inline">\(t = 0\)</span>.</li>
+<li><span class="math inline">\(x\)</span> là tọa độ tại thời điểm <span class="math inline">\(t\)</span> sau đó.</li>
+</ul>
+<p><strong>Đồ thị vận tốc theo thời gian:</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/velocity-time-plot-uniform.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Đồ thị vận tốc theo thời gian của chuyển động tăẳng đều</figcaption>
+</figure>
+</div>
+<p>Quãng đường: <span class="math inline">\(s = v \cdot t = \text{diện tích hình chữ nhật}\)</span></p>
+<p><strong>Đồ thị độ dịch chuyển – thời gian:</strong></p>
+<ul>
+<li>Từ <span class="math inline">\(\displaystyle v = \frac{d}{t} \implies d = v \cdot t\)</span> ta có đồ thị có dạng sau:</li>
+<li>Độ dốc của đồ thị bằng với vận tốc của vật: <span class="math inline">\(\tan \alpha = v\)</span></li>
+</ul>
+<div id="fig-particle-position" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-particle-position-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/displacement_time_plot.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-particle-position-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Hình&nbsp;2.1: Đồ thị độ dịch chuyển - thời gian của chuyển động thẳng đều
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="chuyển-động-thẳng-biến-đổi-đều" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="chuyển-động-thẳng-biến-đổi-đều"><span class="header-section-number">2.4</span> Chuyển động thẳng biến đổi đều</h2>
+<p>Chuyển động có vận tốc thay đổi theo thời gian được gọi là chuyển động biến đổi.</p>
+<p><strong>Gia tốc</strong> là đại lượng đặc trưng cho sự biến đổi nhanh hay chậm của vận tốc.</p>
+<p><em>Gia tốc trung bình</em> được tính công thức: <span class="math display">\[\vec{a}_{tb} = \frac{\vec{v}_t - \vec{v}_0}{t - t_0} = \frac{\Delta \vec{v}}{\Delta t}\]</span></p>
+<p>Vector gia tốc trung bình có cùng phương với quỹ đạo, giá trị đại số của nó là: <span class="math display">\[
+  a_{tb} = \frac{v_t - v_0}{t - t_0} = \frac{\Delta v}{\Delta t}
+\]</span></p>
+<p>Trong phần này ta chỉ tìm hiểu chuyển động biến đổi đơn giản nhất là chuyển động thẳng biến đổi đều. <strong>Chuyển động thẳng biến đổi đều</strong> là chuyển động thẳng và vectơ gia tốc không đổi theo thời gian.</p>
+<ul>
+<li>Nếu vận tốc tăng đều theo thời gian: <strong>Chuyển động thẳng nhanh dần đều.</strong></li>
+<li>Nếu vận tốc giảm đều theo thời gian: <strong>Chuyển động thẳng chậm dần đều.</strong></li>
+</ul>
+<blockquote class="blockquote">
+<p>*<strong>Lưu ý:</strong></p>
+<ul>
+<li><strong>Chuyển động thẳng nhanh dần đều:</strong> <span class="math inline">\(\vec{a}\)</span> và <span class="math inline">\(\vec{v}\)</span> cùng chiều hay <span class="math inline">\(a\)</span> và <span class="math inline">\(v\)</span> cùng dấu <span class="math inline">\((a \cdot v &gt; 0)\)</span>.</li>
+<li><strong>Chuyển động thẳng chậm dần đều:</strong> <span class="math inline">\(\vec{a}\)</span> và <span class="math inline">\(\vec{v}\)</span> ngược chiều hay <span class="math inline">\(a\)</span> và <span class="math inline">\(v\)</span> ngược dấu <span class="math inline">\((a \cdot v &lt; 0)\)</span>.</li>
+<li><strong>Đơn vị của gia tốc là:</strong> <span class="math inline">\(\text{m/s}^2\)</span>.</li>
+</ul>
+</blockquote>
+<p><strong>Các công thức của chuyển động thẳng biến đổi đều:</strong></p>
+<p><span class="math display">\[v_t = v_0 + at\]</span></p>
+<p><span class="math display">\[d = v_0 t + \frac{1}{2} a t^2\]</span></p>
+<p><span class="math display">\[v_t^2 - v_0^2 = 2ad\]</span></p>
+<p><strong>Đồ thị vận tốc – thời gian:</strong> <span class="math inline">\(v_t = v_0 + at\)</span></p>
+<p>Quãng đường: <span class="math inline">\(S = \frac{1}{2}(v + v_0) \cdot t = v_{tb} \cdot t = \text{diện tích hình thang (gạch sọc)}.\)</span></p>
+</section>
+<section id="rơi-tự-do" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="rơi-tự-do"><span class="header-section-number">2.5</span> Rơi tự do</h2>
+<p>Rơi tự do là sự rơi chỉ dưới tác dụng của trọng lực (trong trường hợp vật rơi trong không khí mà lực cản không khí rất nhỏ so với trọng lực của vật thì vẫn có thể coi gần đúng là rơi tự do).</p>
+<p>Chuyển động rơi tự do là chuyển động thẳng nhanh dần đều, phương thẳng đứng chiều từ trên xuống.</p>
+<p><strong>Gia tốc rơi tự do:</strong></p>
+<ul>
+<li>Ở cùng một nơi trên Trái Đất mọi vật rơi tự do với cùng một gia tốc.</li>
+<li>Gia tốc rơi tự do được kí hiệu là <span class="math inline">\(\vec{g}\)</span>, giá trị của <span class="math inline">\(g\)</span> phụ thuộc vào vĩ độ địa lý và độ cao. Ở gần bề mặt Trái Đất người ta thường lấy <span class="math inline">\(g = 9.8\text{ m/s}^2\)</span>.</li>
+<li>Gia tốc <span class="math inline">\(\vec{g}\)</span> luôn có phương thẳng đứng, chiều hướng từ trên xuống.</li>
+</ul>
+<p><strong>Các công thức của rơi tự do (<span class="math inline">\(v_0 = 0\)</span>)</strong> <span class="math display">\[v = gt\]</span></p>
+<p><span class="math display">\[d = s = \frac{1}{2}gt^2\]</span></p>
+<p><span class="math display">\[v^2 = 2gs\]</span></p>
+</section>
+<section id="chuyển-động-ném" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="chuyển-động-ném"><span class="header-section-number">2.6</span> Chuyển động ném</h2>
+<section id="chuyển-động-ném-ngang" class="level3">
+<h3 class="anchored" data-anchor-id="chuyển-động-ném-ngang">Chuyển động ném ngang</h3>
+<p>Xét một vật được ném ngang từ điểm O ở độ cao H so với mặt đất. Chọn hệ quy chiếu như hình vẽ.</p>
+<p><strong>Xét theo phương Ox:</strong> vật chuyển động thẳng đều nên ta có:</p>
+<p><span class="math display">\[v_x = v_0 \ x = v_x t = v_0 t \Rightarrow t = \dfrac{x}{v_0} \quad (1) \]</span></p>
+<p><strong>Xét theo phương Oy:</strong> vật rơi tự do với vận tốc ban đầu bằng 0 nên ta có:</p>
+<p><span class="math display">\[v_y = gt \ y = \dfrac{1}{2}gt^2 \quad (2) \]</span></p>
+<p><strong>Thay (1) vào (2) ta được:</strong> <span class="math inline">\(y = \dfrac{1}{2}g \left(\dfrac{x}{v_0}\right)^2 = \dfrac{g}{2v_0^2} \cdot x^2\)</span>.</p>
+<p><span class="math inline">\(\implies\)</span> Quỹ đạo chuyển động của vật là một nhánh Parabol.</p>
+<p><strong>Thời gian rơi:</strong> <span class="math display">\[y = H = \frac{1}{2}gt^2 \Rightarrow t = \sqrt{\frac{2H}{g}}\]</span></p>
+<p><strong>Tầm bay xa của vật theo phương ngang:</strong></p>
+<p><span class="math display">\[L = x_{\text{max}} = v_0 t = v_0 \sqrt{\frac{2H}{g}}\]</span></p>
+<p><strong>Vận tốc của vật khi chạm đất:</strong></p>
+<p><span class="math display">\[v_{\text{cđ}} = \sqrt{v_x^2 + v_y^2} = \sqrt{v_0^2 + 2gH}\]</span></p>
+</section>
+<section id="chuyển-động-ném-xiên" class="level3">
+<h3 class="anchored" data-anchor-id="chuyển-động-ném-xiên">Chuyển động ném xiên</h3>
+<p>Xét một vật được ném xiên từ điểm O trên mặt đất với vận tốc ban đầu <span class="math inline">\(\vec{v}_0\)</span> hợp với phương ngang một góc <span class="math inline">\(\alpha\)</span>.</p>
+<p>Theo Ox vật chuyển động thẳng đều nên ta có:</p>
+<p><span class="math display">\[
+\begin{align}
+  v_x &amp;= v_{0x} = v_0 \cos \alpha \ x = v_x t = v_0 \cos \alpha \cdot t \\
+  \Rightarrow t &amp;= \dfrac{x}{v_0 \cos \alpha} \quad (1)
+\end{align}
+\]</span></p>
+<p>Theo Oy vật chuyển động thẳng biến đổi đều với gia tốc <span class="math inline">\(-\vec{g}\)</span>:</p>
+<p><span class="math display">\[
+  \begin{cases}
+    v_{0y} = v_0 \sin \alpha \ v_y = v_{0y} - gt = v_0 \sin \alpha - gt \\
+    y = v_{0y} t - \dfrac{1}{2}gt^2 = v_0 \sin \alpha \cdot t - \dfrac{1}{2}gt^2 \quad (2)
+  \end{cases}
+\]</span></p>
+<p>Thay (1) vào (2) ta được:</p>
+<p><span class="math display">\[y = v_0 \sin \alpha \cdot \frac{x}{v_0 \cos \alpha} - \frac{1}{2}g \left(\frac{x}{v_0 \cos \alpha}\right)^2 = -\frac{g}{2v_0^2 \cos^2 \alpha} x^2 + x \cdot \tan \alpha\]</span></p>
+<p><span class="math inline">\(\Rightarrow\)</span> Quỹ đạo là Parabol.</p>
+<p><strong>Thời gian từ lúc ném đến khi vật rơi chạm đất:</strong> khi chạm đất <span class="math inline">\(y = 0\)</span> từ (2) ta có:</p>
+<p><span class="math display">\[t = \frac{2v_0 \sin \alpha}{g}\]</span></p>
+<p><strong>Tầm bay xa theo phương ngang:</strong></p>
+<p><span class="math display">\[L = x_{\text{max}} = v_0 \cos \alpha \cdot \frac{2v_0 \sin \alpha}{g} = \frac{v_0^2 \sin 2\alpha}{g}\]</span></p>
+<p><strong>Tầm bay cao:</strong></p>
+<p><span class="math display">\[H = y_{\text{max}} = \frac{v_0^2 \sin^2 \alpha}{2g}\]</span></p>
+</section>
+</section>
+<section id="bài-tập-minh-họa" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="bài-tập-minh-họa">Bài tập minh họa</h2>
+<p><strong>Dạng 1. Chuyển động thẳng đều</strong></p>
+<p><strong>Bài 1.</strong> Một ô tô chuyển động thẳng đều với vận tốc 95 km/h trên đường quốc lộ song song với đường ray của một tàu hỏa đang chuyển động thẳng đều với vận tốc 75 km/h. Ô tô và tàu hỏa chuyển động cùng chiều. Biết chiều dài của tàu hỏa là 1.3 km. Hỏi sau bao lâu thì ô tô vượt qua hết chiều dài tàu hỏa và quãng đường ô tô đi được trong thời gian đó. Kết quả bài toán sẽ ra sao nếu ô tô và tàu hỏa đi ngược chiều.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/exercise-car-train.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+<p><strong>Bài 2.</strong> Lúc 7 giờ sáng một xe ô tô xuất phát ưừ tỉnh A đi đến tỉnh B với tốc độ 60 km/h. Nửa giờ sau, một ô tô khác xuất phát từ tỉnh B đi đến tỉnh A với tốc độ 40 km/h. Coi đường đi giữa hai tỉnh A và B là đường thẳng, cách nhau 180 km và các ô tô chuyển động thằng đều.</p>
+<ol type="1">
+<li>Lập phương trình chuyển động của các xe ô tô.</li>
+<li>Xác định vị trí và thời điểm hai xe gặp nhau.</li>
+<li>Xác định các thời điểm mà các xe đi đến nơi đã định.</li>
+</ol>
+<p><strong>Dạng 2. Tính tốc độ trung bình</strong></p>
+<p><strong>Bài 3.</strong> Một người tập thể dục chạy trên một đường thẳng. Lúc đầu người đó chạy với tốc độ trung bình 5 m/s trong thời gian 4 phút. Sau đó người đó giảm tốc độ xuống còn 4 m/s trong thời gian 3 phút.</p>
+<ol type="1">
+<li>Hỏi người đó chạy đường quãng đường bằng bao nhiêu?</li>
+<li>Tính tốc độ trung bình của người đó trong toàn bộ thời chạy.</li>
+</ol>
+<p><strong>Dạng 3. Chuyển động biến đổi đều</strong></p>
+<p><strong>Dạng 4. Rơi tự do</strong></p>
+<p><strong>Dạng 5. Chuyển động của vật bị ném</strong></p>
+<p><strong>Dạng 6. Công thức cộng vận tốc</strong></p>
+</section>
+<section id="bài-tập-tự-luyện" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="bài-tập-tự-luyện">Bài tập tự luyện</h2>
+<p><strong>Bài 1.</strong> Một xe khởi hành từ địa điểm A lúc 8 giờ sáng đi tới địa điểm B cách A 110 km, chuyển động thằng đều với tốc độ 40 km/h. Một xe khác khởi hành từ B lúc 8 giờ 30 phút sáng đi về A, chuyển động thẳng đều với tốc độ 50 km/h. Vẽ đồ thị độ dịch chuyển - thời gian của hai xe và dựa vào đó xác định khoảng cách giữa hai xe lúc 9 giờ sáng và thời gian, địa điểm hai xe gặp nhau.</p>
+<p><strong>Bài 2.</strong> Một người lái mô tô đi trên một đoạn đường <span class="math inline">\(s\)</span>, trong một phần ba thời gian đầu mô tô đi với tốc độ 50 km/h, một phần ba thời gian tiếp theo đi với tốc độ 60 km/h và trong một phần ba thời gian còn lại, đi với tốc độ 10 km/h. Tính tốc độ trung bình của mô tô trên cả quãng đường.</p>
+<p><strong>Bài 3.</strong> Một người đi xe đạp đi nửa đoạn đường đầu tiên với tốc độ 12 km/h và nửa đoạn đường sau với tốc độ 20 km/h. Tính tốc độ trung bình của người đi xe đạp trên cả đoạn đường.</p>
+<p><strong>Bài 4.</strong> Một vận động viên chạy bộ trong thời gian 3s, vận động viên chạy từ vị trí có tọa độ <span class="math inline">\(x_1 = 50\text{ m}\)</span> đến vị trí có tọa độ <span class="math inline">\(x_2 = 30.5\text{ m}\)</span> trên trục Ox như hình vẽ. Tính vận tốc trung bình của vận động viên.</p>
+<p><strong>Bài 5.</strong> Một người lái ô tô đang chuyển động với vận tốc 35 km/h, khi xe còn cách ngã tư 28m thì người này thấy đèn tín hiệu chuyển sang màu vàng, người này biết sau 2.0s thì đèn sẽ chuyển sang màu đỏ, ngã tư rộng 15m. Hỏi người này nên giảm tốc độ cho xe dừng lại hay tiếp tục tăng tốc để cho xe vượt qua hết ngã tư trước khi đèn tín hiệu chuyển sang màu đỏ. Biết xe có thể giảm tốc với gia tốc tối đa là <span class="math inline">\(-5.8\text{ m/s}^2\)</span> và có thể tăng tốc tối đa từ 45 km/h lên 65 km/h trong 6.0s.</p>
+<p><strong>Bài 6.</strong> Một ca nô tăng tốc đều đặn từ <span class="math inline">\(15\text{ m/s}\)</span> đến <span class="math inline">\(27\text{ m/s}\)</span> trên một quãng đường thẳng dài <span class="math inline">\(80\text{ m}\)</span>. Hãy xác định gia tốc của ca nô và thời gian ca nô tăng tốc chạy.</p>
+<p><strong>Bài 7.</strong> Một electron có vận tốc ban đầu là <span class="math inline">\(5 \times 10^5\text{ m/s}\)</span>, có gia tốc <span class="math inline">\(8 \times 10^4\text{ m/s}^2\)</span>. Tính thời gian để nó đạt vận tốc <span class="math inline">\(5.4 \times 10^5\text{ m/s}\)</span> và quãng đường mà nó đi được trong thời gian trên.</p>
+<p><strong>Bài 8.</strong> Lúc 8 giờ sáng một ô tô đi qua điểm A trên một đường thẳng với vận tốc <span class="math inline">\(10\text{ m/s}\)</span>, chuyển động chậm dần đều với gia tốc <span class="math inline">\(0.2\text{ m/s}^2\)</span>. Cùng lúc đó tại điểm B cách A <span class="math inline">\(560\text{ m}\)</span>, một ô tô thứ hai bắt đầu khởi hành đi ngược chiều với xe thứ nhất, chuyển động nhanh dần đều với gia tốc <span class="math inline">\(0.4\text{ m/s}^2\)</span>.</p>
+<ol type="1">
+<li>Viết phương trình chuyển động của 2 xe.</li>
+<li>Xác định vị trí và thời điểm 2 xe gặp nhau.</li>
+<li>Hãy cho biết xe thứ nhất dừng lại cách A bao nhiêu mét.</li>
+</ol>
+<p><strong>Bài 9.</strong> Một vật chuyển động có đồ thị gia tốc theo thời gian được cho bởi hình bên.</p>
+<ol type="1">
+<li>Vật bắt đầu chuyển động từ trạng thái nghỉ, xác định vận tốc của vật theo thời gian.</li>
+<li>Tại thời điểm <span class="math inline">\(t = 0\)</span> vật có vận tốc <span class="math inline">\(40\text{ m/s}\)</span>, xác định vận tốc của vật theo thời gian.</li>
+</ol>
+<p><strong>Bài 10.</strong> Một ô tô bắt đầu chuyển động từ trạng thái nghỉ <span class="math inline">\(v_1 = 0\text{ km/h}\)</span> sau thời gian 5s vận tốc của ô tô là <span class="math inline">\(v_2 = 75\text{ km/h}\)</span>. Tính gia tốc của ô tô và quãng đường ô tô đi được trong thời gian trên.</p>
+<p><strong>Bài 11.</strong> Một ô tô đang chuyển động thẳng với vận tốc <span class="math inline">\(15\text{ m/s}\)</span> thì tài xế hãm phanh, sau 5s vận tốc ô tô giảm còn <span class="math inline">\(5\text{ m/s}\)</span>. Tính gia tốc của ô tô và quãng đường ô tô đi được từ lúc hãm phanh cho đến khi dừng lại.</p>
+<p><strong>Bài 30</strong>. Một ô tô chạy với vận tốc 50 km/h trong trời mưa. Mưa rơi theo phương thẳng đứng. Trên cửa kính bên của xe, các vệt mưa làm với phương thẳng đứng một góc <span class="math inline">\(60^\circ\)</span>.</p>
+<ol type="1">
+<li>Xác định vận tốc của giọt mưa đối với xe ô tô.</li>
+<li>Xác định vận tốc của giọt mưa đối với mặt đất.</li>
+</ol>
+<p>(Chú thích hình: Người ngồi trong ô tô đang chuyển động thấy giọt mưa rơi xiên)</p>
+<p><strong>Bài 31.</strong> Từ một khinh khí cầu đang hạ thấp đều với vận tốc <span class="math inline">\(v_0 = 2\text{ m/s}\)</span> (so với mặt đất), người ta phóng một vật thẳng đứng hướng lên với vận tốc <span class="math inline">\(v = 18\text{ m/s}\)</span> (so với mặt đất). Lấy <span class="math inline">\(g = 10\text{ m/s}^2\)</span>.</p>
+<ol type="1">
+<li>Tính khoảng cách giữa khí cầu và vật khi vật lên tới vị trí cao nhất.</li>
+<li>Sau bao lâu vật rơi trở lại gặp khí cầu.</li>
+</ol>
+</section>
+<section id="câu-hỏi-trắc-nghiệm" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="câu-hỏi-trắc-nghiệm">Câu hỏi trắc nghiệm</h2>
+<p><strong>Câu 1.</strong> Có hai vật (1) và (2). Nếu chọn vật (1) làm mốc thì vật (2) chuyển động tròn đều với bán kính R so với (1). Nếu chọn (2) làm mốc thì có thể phát biểu về quỹ đạo của (1) so với (2) như thế nào?</p>
+<ul>
+<li>A. Không có quỹ đạo vì vật (1) nằm yên.</li>
+<li>B. Là đường thẳng.</li>
+<li>C. Là đường tròn có bán kính khác R.</li>
+<li>D. Là đường tròn có bán kính R.</li>
+</ul>
+<p><strong>Câu 2.</strong> Có 3 vật (1), (2) và (3). Áp dụng công thức cộng vận tốc. Hãy chọn biểu thức <strong>sai</strong>?</p>
+<ul>
+<li>A. <span class="math inline">\(\vec{v}_{2,3} = \vec{v}_{2,1} + \vec{v}_{1,3}\)</span></li>
+<li>B. <span class="math inline">\(\vec{v}_{13} = \vec{v}_{12} + \vec{v}_{23}\)</span></li>
+<li>C. <span class="math inline">\(\vec{v}_{32} = \vec{v}_{31} - \vec{v}_{21}\)</span></li>
+<li>D. <span class="math inline">\(\vec{v}_{12} = \vec{v}_{13} + \vec{v}_{21}\)</span></li>
+</ul>
+<p><strong>Câu 3.</strong> Trường hợp nào sau đây người ta nói đến vận tốc tức thời?</p>
+<ul>
+<li>A. Ô tô chạy từ Phan Thiết vào Biên Hoà với vận tốc <span class="math inline">\(50\text{ km/h}\)</span>.</li>
+<li>B. Tốc độ tối đa khi xe chạy trong thành phố là <span class="math inline">\(40\text{ km/h}\)</span>.</li>
+<li>C. Viên đạn ra khỏi nòng súng với vận tốc <span class="math inline">\(300\text{ m/s}\)</span>.</li>
+<li>D. Tốc độ tối thiểu khi xe chạy trên đường cao tốc là <span class="math inline">\(80\text{ km/h}\)</span>.</li>
+</ul>
+<p><strong>Câu 4.</strong> Phương trình nào sau là phương trình vận tốc của chuyển động chậm dần đều (chiều dương cùng chiều chuyển động)?</p>
+<ul>
+<li>A. <span class="math inline">\(v = 5t\)</span></li>
+<li>B. <span class="math inline">\(v = 15 - 3t\)</span></li>
+<li>C. <span class="math inline">\(v = 10 + 5t + 2t^2\)</span></li>
+<li>D. <span class="math inline">\(v = 20 - \dfrac{t^2}{2}\)</span></li>
+</ul>
+<p><strong>Câu 5.</strong> Trong chuyển động thẳng biến đổi đều lúc đầu vật có vận tốc <span class="math inline">\(\vec{v}_1\)</span>; sau khoảng thời gian <span class="math inline">\(\Delta t\)</span> vật có vận tốc <span class="math inline">\(\vec{v}_2\)</span>. Vectơ gia tốc <span class="math inline">\(\vec{a}\)</span> có chiều nào sau?</p>
+<ul>
+<li>A. Chiều của <span class="math inline">\(\vec{v}_2 - \vec{v}_1\)</span>.</li>
+<li>B. Chiều ngược với <span class="math inline">\(\vec{v}_1\)</span>.</li>
+<li>C. Chiều của <span class="math inline">\(\vec{v}_2 + \vec{v}_1\)</span>.</li>
+<li>C. Chiều của <span class="math inline">\(\vec{v}_2\)</span>.</li>
+</ul>
+<p><strong>Câu 6.</strong> Tìm phát biểu đúng?</p>
+<ul>
+<li>A. Mọi vật rơi trong không khí luôn là sự rơi tự do.</li>
+<li>B. Chuyển động rơi tự do có gia tốc lớn hơn trong chuyển động thẳng biến đổi đều.</li>
+<li>C. Chuyển động rơi tự do là chuyển động thẳng đều.</li>
+<li>D. Sự rơi tự do là sự rơi chỉ dưới tác dụng của trọng lực.</li>
+</ul>
+<p><strong>Câu 7.</strong> Vật chuyển động chậm dần đều</p>
+<ul>
+<li>A. Vectơ gia tốc của vật cùng chiều với vectơ vận tốc.</li>
+<li>B. Gia tốc của vật luôn luôn dương.</li>
+<li>C. Vectơ gia tốc của vật ngược chiều với vectơ vận tốc.</li>
+<li>D. Gia tốc của vật luôn luôn âm.</li>
+</ul>
+<p><strong>Câu 8.</strong> Chọn câu đúng</p>
+<ul>
+<li>A. Gia tốc của chuyển động thẳng nhanh dần đều lớn hơn gia tốc của chuyển động thẳng chậm dần đều.</li>
+<li>B. Chuyển động thẳng nhanh dần đều có gia tốc lớn thì có vận tốc lớn.</li>
+<li>C. Gia tốc trong chuyển động thẳng nhanh dần đều có phương, chiều và độ lớn không đổi.</li>
+<li>D. Chuyển động thẳng biến đổi đều có gia tốc tăng, giảm đều theo thời gian.</li>
+</ul>
+<p><strong>Câu 9.</strong> Trong chuyển động thẳng nhanh dần đều</p>
+<ul>
+<li>A. vận tốc <span class="math inline">\(v\)</span> luôn luôn dương.</li>
+<li>B. gia tốc <span class="math inline">\(a\)</span> luôn luôn dương.</li>
+<li>C. <span class="math inline">\(a\)</span> luôn luôn cùng dấu với <span class="math inline">\(v\)</span>.</li>
+<li>D. <span class="math inline">\(a\)</span> luôn luôn ngược dấu với <span class="math inline">\(v\)</span>.</li>
+</ul>
+<p><strong>Câu 10.</strong> Một người đang ở trên một khí cầu đang chuyển động đều theo phương thẳng đứng hướng lên thì người đó làm rơi một vật nặng ra ngoài. Bỏ qua lực cản không khí sau khi rời khỏi khí cầu, vật nặng</p>
+<ul>
+<li>A. Rơi tự do.</li>
+<li>B. Chuyển động lúc đầu là chậm dần đều sau đó là nhanh dần đều.</li>
+<li>C. Chuyển động đều.</li>
+<li>D. Bị hút theo khí cầu nên không thể rơi xuống đất.</li>
+</ul>
+<p><strong>Câu 11.</strong> Một vận động viên đá các quả bóng chuyển động trong không khí theo các quỹ đạo như trong hình vẽ, các quỹ đạo đều có cùng độ cao cực đại là h. Bỏ qua lực cản của không khí. Quỹ đạo có thời gian chuyển động lâu nhất</p>
+<ul>
+<li>A. quỹ đạo A.</li>
+<li>B. quỹ đạo B.</li>
+<li>C. quỹ đạo C.</li>
+<li>D. ba quỹ đạo có thời gian chuyển động bằng nhau.</li>
+</ul>
+<p><strong>Câu 12.</strong> Phương trình độ dịch chuyển của một vật chuyển động thẳng biến đổi đều (dấu của <span class="math inline">\(d_0, v_0, a\)</span> tuỳ theo gốc và chiều dương của trục tọa độ) là</p>
+<ul>
+<li>A. <span class="math inline">\(d = d_0 + v_0 t - \dfrac{at^2}{2}\)</span></li>
+<li>B. <span class="math inline">\(d = d_0 + v_0 t + \dfrac{at^2}{2}\)</span></li>
+<li>C. <span class="math inline">\(d = d_0 + v_0 + \dfrac{at^2}{2}\)</span></li>
+<li>D. <span class="math inline">\(d = d_0 + v_0 t + \dfrac{at}{2}\)</span></li>
+</ul>
+<p><strong>Câu 13.</strong> Hai ô tô chuyển động thẳng đều với cùng độ lớn vận tốc v. Khi gặp nhau ở một ngã tư thì xe (1) chạy theo hướng Bắc, còn xe (2) chạy theo hướng Đông. Người quan sát trên xe (1) thấy xe (2) chuyển động theo hướng</p>
+<ul>
+<li>A. Đông.</li>
+<li>B. Đông - Bắc.</li>
+<li>C. Tây - Bắc.</li>
+<li>D. Đông – Nam.</li>
+</ul>
+<p><strong>Câu 14.</strong> Một người đang chạy xe ô tô thì nhìn vào đồng hồ đo tốc độ (tốc kế). Kim đồng hồ chỉ 75 km/h, có nghĩa là</p>
+<ul>
+<li>A. trong 1 giờ đầu xe đã chạy được quãng đường là 75 km.</li>
+<li>B. tốc độ tức thời của xe máy tại thời điểm xem là 75 km/h.</li>
+<li>C. tốc độ trung bình của xe là 75 km/h.</li>
+<li>D. tốc độ tối đa của xe có thể chạy là 75 km/h.</li>
+</ul>
+<p><strong>Câu 15.</strong> Hai học sinh lần lượt đi trên thang cuốn đang hoạt động trong một siêu thị. Học sinh thứ nhất đi với tốc độ <span class="math inline">\(v_1\)</span>, khi đi hết thang thì bước được 30 bậc. Học sinh thứ hai đi với tốc độ <span class="math inline">\(v_2\)</span> và cùng chiều đi với học sinh thứ nhất, khi đi hết thang thì bước được 40 bậc. Phát biểu nào sau đây là đúng?</p>
+<ul>
+<li>A. Hai học sinh đi ngược chiều chuyển động của thang cuốn và <span class="math inline">\(v_1 &lt; v_2\)</span>.</li>
+<li>B. Hai học sinh đi cùng chiều chuyển động của thang cuốn và <span class="math inline">\(v_1 &gt; v_2\)</span>.</li>
+<li>C. Hai học sinh đi ngược chiều chuyển động của thang cuốn và <span class="math inline">\(v_1 &gt; v_2\)</span>.</li>
+<li>D. Hai học sinh đi cùng chiều chuyển động của thang cuốn và <span class="math inline">\(v_1 = v_2\)</span>.</li>
+</ul>
+<p><strong>Câu 16.</strong> Một người đi xe đạp trên nửa đoạn đường đầu tiên với tốc độ <span class="math inline">\(30\text{ km/h}\)</span>, trên nửa đoạn đường thứ hai với tốc độ <span class="math inline">\(20\text{ km/h}\)</span>. Tốc độ trung bình trên cả quãng đường là</p>
+<ul>
+<li>A. <span class="math inline">\(28\text{ km/h}\)</span>.</li>
+<li>B. <span class="math inline">\(25\text{ km/h}\)</span>.</li>
+<li>C. <span class="math inline">\(24\text{ km/h}\)</span>.</li>
+<li>D. <span class="math inline">\(22\text{ km/h}\)</span>.</li>
+</ul>
+<p><strong>Câu 17.</strong> Một ô tô chuyển động từ A đến B. Trong nửa thời gian đầu ô tô chuyển động với tốc độ <span class="math inline">\(40\text{ km/h}\)</span>, trong nửa thời gian sau ô tô chuyển động với tốc độ <span class="math inline">\(60\text{ km/h}\)</span>. Tốc độ trung bình trên cả quãng đường là</p>
+<ul>
+<li>A. <span class="math inline">\(55\text{ km/h}\)</span>.</li>
+<li>B. <span class="math inline">\(50\text{ km/h}\)</span>.</li>
+<li>C. <span class="math inline">\(48\text{ km/h}\)</span>.</li>
+<li>D. <span class="math inline">\(45\text{ km/h}\)</span>.</li>
+</ul>
+<p><strong>Câu 18.</strong> Khi ô tô đang chạy với vận tốc <span class="math inline">\(10\text{ m/s}\)</span> trên đoạn đường thẳng thì người lái hãm phanh và ô tô chuyển động chậm dần đều. Sau khi đi được quãng đường <span class="math inline">\(100\text{ m}\)</span> ô tô dừng lại. Chọn chiều dương cùng chiều chuyển động. Gia tốc chuyển động của ô tô là</p>
+<ul>
+<li>A. <span class="math inline">\(0.5\text{ m/s}^2\)</span>.</li>
+<li>B. <span class="math inline">\(1\text{ m/s}^2\)</span>.</li>
+<li>C. <span class="math inline">\(-2\text{ m/s}^2\)</span>.</li>
+<li>D. <span class="math inline">\(-0.5\text{ m/s}^2\)</span>.</li>
+</ul>
+<p><strong>Câu 19.</strong> Một ô tô bắt đầu chuyển bánh và chuyển động nhanh dần đều trên một đoạn đường thẳng. Sau 10 giây kể từ lúc chuyển bánh ô tô đạt vận tốc <span class="math inline">\(36\text{ km/h}\)</span>. Chọn chiều dương ngược chiều chuyển động thì gia tốc chuyển động của ô tô là</p>
+<ul>
+<li>A. <span class="math inline">\(-1\text{ m/s}^2\)</span>.</li>
+<li>B. <span class="math inline">\(1\text{ m/s}^2\)</span>.</li>
+<li>C. <span class="math inline">\(0.5\text{ m/s}^2\)</span>.</li>
+<li>D. <span class="math inline">\(-0.5\text{ m/s}^2\)</span>.</li>
+</ul>
+<p><strong>Câu 20.</strong> Một vật chuyển động có phương trình vận tốc <span class="math inline">\(v = (10 + 2t)\text{ (m/s)}\)</span>. Sau 10 giây vật đi được quãng đường</p>
+<ul>
+<li>A. <span class="math inline">\(30\text{ m}\)</span>.</li>
+<li>B. <span class="math inline">\(110\text{ m}\)</span>.</li>
+<li>C. <span class="math inline">\(200\text{ m}\)</span>.</li>
+<li>D. <span class="math inline">\(300\text{ m}\)</span>.</li>
+</ul>
+<p><strong>Câu 21.</strong> Một ô tô đang chuyển động với vận tốc <span class="math inline">\(10\text{ m/s}\)</span> trên đoạn đường thẳng thì lái xe hãm phanh, ô tô chuyển động chậm dần đều, sau <span class="math inline">\(20\text{ s}\)</span> thì xe dừng lại. Quãng đường mà ô tô đi được từ lúc hãm phanh đến lúc dừng lại là</p>
+<ul>
+<li>A. <span class="math inline">\(50\text{ m}\)</span>.</li>
+<li>B. <span class="math inline">\(100\text{ m}\)</span>.</li>
+<li>C. <span class="math inline">\(150\text{ m}\)</span>.</li>
+<li>D. <span class="math inline">\(200\text{ m}\)</span>.</li>
+</ul>
+<p><strong>Câu 22.</strong> Một vật chuyển động thẳng nhanh dần đều với vận tốc ban đầu <span class="math inline">\(5\text{ m/s}\)</span> và với gia tốc <span class="math inline">\(2\text{ m/s}^2\)</span> thì đường đi (tính ra mét) của vật theo thời gian (tính ra giây) được tính theo công thức</p>
+<ul>
+<li>A. <span class="math inline">\(s = 5 + 2t\)</span>.</li>
+<li>B. <span class="math inline">\(s = 5t + 2t^2\)</span>.</li>
+<li>C. <span class="math inline">\(s = 5t - t^2\)</span>.</li>
+<li>D. <span class="math inline">\(s = 5t + t^2\)</span>.</li>
+</ul>
+<p><strong>Câu 23.</strong> Một vật chuyển động thẳng chậm dần đều với vận tốc ban đầu <span class="math inline">\(20\text{ m/s}\)</span> và với gia tốc <span class="math inline">\(0.4\text{ m/s}^2\)</span> thì đường đi (tính ra mét) của vật theo thời gian (tính ra giây) khi <span class="math inline">\(t &lt; 50\text{ giây}\)</span> được tính theo công thức</p>
+<ul>
+<li>A. <span class="math inline">\(s = 20t - 0.2t^2\)</span>.</li>
+<li>B. <span class="math inline">\(s = 20t + 0.2t^2\)</span>.</li>
+<li>C. <span class="math inline">\(s = 20 + 0.4t\)</span>.</li>
+<li>D. <span class="math inline">\(s = 20t - 0.4t^2\)</span>.</li>
+</ul>
+<p><strong>Câu 24.</strong> Phương trình chuyển động của một vật là <span class="math inline">\(d = 10 + 3t + 0.2t^2\)</span> (<span class="math inline">\(d\)</span> tính bằng mét, <span class="math inline">\(t\)</span> tính bằng giây). Quãng đường vật đi được tính từ thời điểm <span class="math inline">\(t = 0\)</span> đến thời điểm <span class="math inline">\(t = 10\text{ s}\)</span> là</p>
+<ul>
+<li>A. <span class="math inline">\(60\text{ m}\)</span>.</li>
+<li>B. <span class="math inline">\(50\text{ m}\)</span>.</li>
+<li>C. <span class="math inline">\(30\text{ m}\)</span>.</li>
+<li>D. <span class="math inline">\(20\text{ m}\)</span>.</li>
+</ul>
+<p><strong>Câu 25.</strong> Một đoàn tàu bắt đầu rời ga, chuyển động nhanh dần đều, sau khi đi được quãng đường <span class="math inline">\(1000\text{ m}\)</span> tàu đạt vận tốc <span class="math inline">\(20\text{ m/s}\)</span>. Chọn chiều dương cùng chiều chuyển động thì gia tốc chuyển động của tàu là</p>
+<ul>
+<li>A. <span class="math inline">\(0.2\text{ m/s}^2\)</span>.</li>
+<li>B. <span class="math inline">\(-0.2\text{ m/s}^2\)</span>.</li>
+<li>C. <span class="math inline">\(0.4\text{ m/s}^2\)</span>.</li>
+<li>D. <span class="math inline">\(-0.4\text{ m/s}^2\)</span>.</li>
+</ul>
+<p><strong>Câu 26.</strong> Một vật được thả rơi không vận tốc đầu từ độ cao <span class="math inline">\(20\text{ m}\)</span>, lấy <span class="math inline">\(g = 10\text{ m/s}^2\)</span>. Bỏ qua lực cản không khí. Hỏi sau bao lâu vật sẽ chạm đất?</p>
+<ul>
+<li>A. <span class="math inline">\(2\text{ s}\)</span>.</li>
+<li>B. <span class="math inline">\(3\text{ s}\)</span>.</li>
+<li>C. <span class="math inline">\(4\text{ s}\)</span>.</li>
+<li>D. <span class="math inline">\(5\text{ s}\)</span>.</li>
+</ul>
+<p><strong>Câu 27.</strong> Một vật rơi tự do sau thời gian 4 giây thì chạm đất. Lấy <span class="math inline">\(g = 10\text{ m/s}^2\)</span>. Quãng đường vật rơi trong giây cuối cùng trước khi chạm đất là</p>
+<ul>
+<li>A. <span class="math inline">\(75\text{ m}\)</span>.</li>
+<li>B. <span class="math inline">\(35\text{ m}\)</span>.</li>
+<li>C. <span class="math inline">\(45\text{ m}\)</span>.</li>
+<li>D. <span class="math inline">\(5\text{ m}\)</span>.</li>
+</ul>
+<p><strong>Câu 28.</strong> Vật rơi tự do từ độ cao <span class="math inline">\(s_1\)</span> xuống mặt đất trong thời gian <span class="math inline">\(t_1\)</span>, từ độ cao <span class="math inline">\(s_2\)</span> xuống mặt đất trong thời gian <span class="math inline">\(t_2\)</span>. Biết <span class="math inline">\(t_2 = 2t_1\)</span>. Tỉ số <span class="math inline">\(s_2/s_1\)</span> là</p>
+<ul>
+<li>A. <span class="math inline">\(0.25\)</span>.</li>
+<li>B. <span class="math inline">\(4\)</span>.</li>
+<li>C. <span class="math inline">\(2\)</span>.</li>
+<li>D. <span class="math inline">\(0.5\)</span>.</li>
+</ul>
+<p><strong>Câu 29.</strong> Thả hai vật rơi tự do đồng thời từ hai độ cao <span class="math inline">\(s_1, s_2\)</span>. Vật thứ nhất chạm đất với vận tốc <span class="math inline">\(v_1\)</span>. Thời gian rơi của vật thứ hai gấp 3 lần thời gian rơi của vật thứ nhất. Vận tốc chạm đất <span class="math inline">\(v_2\)</span> của vật thứ hai là</p>
+<ul>
+<li>A. <span class="math inline">\(2v_1\)</span>.</li>
+<li>B. <span class="math inline">\(3v_1\)</span>.</li>
+<li>C. <span class="math inline">\(4v_1\)</span>.</li>
+<li>D. <span class="math inline">\(9v_1\)</span>.</li>
+</ul>
+<p><strong>Câu 30.</strong> Thả một hòn sỏi rơi tự do từ độ cao <span class="math inline">\(s\)</span> xuống đất. Trong giây cuối cùng trước khi chạm đất hòn sỏi rơi được quãng đường <span class="math inline">\(15\text{ m}\)</span>. Lấy <span class="math inline">\(g = 10\text{ m/s}^2\)</span>. Độ cao <span class="math inline">\(h\)</span> thả hòn sỏi là</p>
+<ul>
+<li>A. <span class="math inline">\(10\text{ m}\)</span>.</li>
+<li>B. <span class="math inline">\(15\text{ m}\)</span>.</li>
+<li>C. <span class="math inline">\(20\text{ m}\)</span>.</li>
+<li>D. <span class="math inline">\(25\text{ m}\)</span>.</li>
+</ul>
+<p><strong>Câu 31.</strong> Một ca nô chạy ngược dòng sông, sau 1 giờ đi được <span class="math inline">\(15\text{ km}\)</span>. Một khúc gỗ trôi xuôi theo dòng sông với vận tốc <span class="math inline">\(2\text{ km/h}\)</span>. Vận tốc của ca nô so với nước là</p>
+<ul>
+<li>A. <span class="math inline">\(30\text{ km/h}\)</span>.</li>
+<li>B. <span class="math inline">\(17\text{ km/h}\)</span>.</li>
+<li>C. <span class="math inline">\(13\text{ km/h}\)</span>.</li>
+<li>D. <span class="math inline">\(7.5\text{ km/h}\)</span>.</li>
+</ul>
+<p><strong>Câu 32.</strong> Một diễn viên đóng thế muốn điều khiển ô tô của mình chuyển động qua 8 ô tô đậu cạnh nhau bên dưới một đoạn đường dốc ngang như hình vẽ. Biết chiều cao của đoạn đường dốc là <span class="math inline">\(1.5\text{ m}\)</span>, khoảng cách theo phương ngang của 8 ô tô là <span class="math inline">\(22\text{ m}\)</span>. Lấy <span class="math inline">\(g = 10\text{ m/s}^2\)</span>; bỏ qua sức cản không khí. Tốc độ tối thiểu của ô tô khi rời khỏi đoạn đường dốc là</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/question32.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+<div class="columns">
+<div class="column" style="width:25%;">
+<p><strong>A.</strong> 40.2 m/s</p>
+</div><div class="column" style="width:25%;">
+<p><strong>B.</strong> 56.8 m/s</p>
+</div><div class="column" style="width:25%;">
+<p><strong>C.</strong> 170.4 m/s</p>
+</div><div class="column" style="width:25%;">
+<p><strong>D.</strong> 12 m/s</p>
+</div>
+</div>
+<p><strong>Câu 33.</strong> Lúc 7 giờ sáng, tại A xe thứ nhất chuyển động thẳng đều với tốc độ <span class="math inline">\(12\text{ km/h}\)</span> để về B. Một giờ sau, tại B xe thứ hai chuyển động thẳng đều với tốc độ <span class="math inline">\(48\text{ km/h}\)</span> theo chiều ngược lại để về A. Cho đoạn thẳng <span class="math inline">\(AB = 72\text{ km}\)</span>. Khoảng cách giữa hai xe lúc 10 giờ là</p>
+<div class="columns">
+<div class="column" style="width:25%;">
+<p><strong>A</strong>. 12 km.</p>
+</div><div class="column" style="width:25%;">
+<p><strong>B</strong>. 60 km.</p>
+</div><div class="column" style="width:25%;">
+<p><strong>C</strong>. 36 km.</p>
+</div><div class="column" style="width:25%;">
+<p><strong>D</strong>. 24 km.</p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><strong>Câu 34.</strong> Hai ô tô cùng chuyển động thẳng đều từ hai bến xe A và B cách nhau <span class="math inline">\(20\text{ km}\)</span> trên một đoạn đường thẳng. Nếu hai ô tô chạy ngược chiều thì chúng sẽ gặp nhau sau 15 phút. Nếu hai ô tô chạy cùng chiều thì chúng sẽ đuổi kịp nhau sau 1 giờ. Vận tốc của hai ô tô lần lượt là:</p>
+</div><div class="column" style="width:40%;">
+<p><img src="images/question34.png" class="img-fluid"></p>
+</div>
+</div>
+<ul>
+<li>A. <span class="math inline">\(v_1 = 80\text{ km/h}; v_2 = 20\text{ km/h}\)</span>.</li>
+<li>B. <span class="math inline">\(v_1 = 60\text{ km/h}; v_2 = 40\text{ km/h}\)</span>.</li>
+<li>C. <span class="math inline">\(v_1 = 40\text{ km/h}; v_2 = 20\text{ km/h}\)</span>.</li>
+<li>D. <span class="math inline">\(v_1 = 50\text{ km/h}; v_2 = 30\text{ km/h}\)</span>.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><strong>Câu 35.</strong> Đồ thị độ dịch chuyển theo thời gian của một người đi xe đạp trên một đường thẳng được biểu diễn trên hình vẽ bên. Quãng đường xe đi được trong khoảng thời gian từ thời điểm <span class="math inline">\(t_1 = 0.5\text{h}\)</span> đến <span class="math inline">\(t_2 = 1\text{h}\)</span> bằng</p>
+</div><div class="column" style="width:30%;">
+<p><img src="images/question35.png" class="img-fluid"></p>
+</div>
+</div>
+<ul>
+<li>A. <span class="math inline">\(20\text{ km}\)</span>.</li>
+<li>B. <span class="math inline">\(60\text{ km}\)</span>.</li>
+<li>C. <span class="math inline">\(40\text{ km}\)</span>.</li>
+<li>D. <span class="math inline">\(30\text{ km}\)</span>.</li>
+</ul>
+<p><strong>Câu 36.</strong> Hai xe ô tô A, B chuyển động thẳng cùng chiều với các vận tốc lần lượt là <span class="math inline">\(30\text{ km/h}\)</span> và <span class="math inline">\(40\text{ km/h}\)</span>. Trong hệ quy chiếu gắn với xe A thì xe B có vận tốc là</p>
+<ul>
+<li>A. <span class="math inline">\(50\text{ km/h}\)</span></li>
+<li>B. <span class="math inline">\(70\text{ km/h}\)</span></li>
+<li>C. <span class="math inline">\(10\text{ km/h}\)</span></li>
+<li>D. <span class="math inline">\(40\text{ km/h}\)</span></li>
+</ul>
+<p><strong>Câu 37.</strong> Một quả táo rơi tự do từ độ cao <span class="math inline">\(4\text{ m}\)</span>. Lấy <span class="math inline">\(g = 10\text{ m/s}^2\)</span>. Vận tốc quả táo lúc chạm đất là</p>
+<ul>
+<li>A. <span class="math inline">\(45\text{ m/s}\)</span>.</li>
+<li>B. <span class="math inline">\(3\text{ m/s}\)</span>.</li>
+<li>C. <span class="math inline">\(4\sqrt{5}\text{ m/s}\)</span>.</li>
+<li>D. <span class="math inline">\(10\text{ m/s}\)</span>.</li>
+</ul>
+<p><strong>Câu 38.</strong> Đồ thị vận tốc – thời gian của một chất điểm chuyển động được cho như hình vẽ. Quãng đường mà chất điểm đi được sau <span class="math inline">\(3\text{ s}\)</span> là</p>
+<ul>
+<li>A. <span class="math inline">\(10\text{ m}\)</span>.</li>
+<li>B. <span class="math inline">\(20\text{ m}\)</span>.</li>
+<li>C. <span class="math inline">\(30\text{ m}\)</span>.</li>
+<li>D. <span class="math inline">\(40\text{ m}\)</span>.</li>
+</ul>
+<p><strong>Câu 39.</strong> Một Ô tô và một xe máy cùng xuất phát từ hai địa điểm A và B cách nhau <span class="math inline">\(400\text{ m}\)</span> từ trạng thái nghỉ và cùng chạy theo hướng AB trên đoạn đường thẳng đi qua A và B. Ô tô xuất phát từ A chuyển động nhanh dần đều với gia tốc <span class="math inline">\(2.5 \cdot 10^{-2}\text{ m/s}^2\)</span>. Xe máy xuất phát từ B chuyển động nhanh dần đều với gia tốc <span class="math inline">\(2.0 \cdot 10^{-2}\text{ m/s}^2\)</span>. Tại vị trí hai xe đuổi kịp nhau thì tốc độ của xe xuất phát từ A và xe xuất phát từ B lần lượt là</p>
+<ul>
+<li>A. <span class="math inline">\(8\text{ m/s}\)</span>; <span class="math inline">\(10\text{ m/s}\)</span>.</li>
+<li>B. <span class="math inline">\(9\text{ m/s}\)</span>; <span class="math inline">\(8\text{ m/s}\)</span>.</li>
+<li>C. <span class="math inline">\(6\text{ m/s}\)</span>; <span class="math inline">\(4\text{ m/s}\)</span>.</li>
+<li>D. <span class="math inline">\(4\text{ m/s}\)</span>; <span class="math inline">\(6\text{ m/s}\)</span>.</li>
+</ul>
+<p><strong>Câu 40.</strong> Một người đi xe đạp khởi hành từ A cùng lúc đó một người đi xe máy khởi hành từ B, hai người đi ngược chiều nhau đến gặp nhau. Người thứ nhất có vận tốc đầu là <span class="math inline">\(18\text{ km/h}\)</span> và chuyển động chậm dần đều với gia tốc <span class="math inline">\(20\text{ cm/s}^2\)</span>. Người thứ 2 có vận tốc đầu là <span class="math inline">\(5.4\text{ km/h}\)</span> và chuyển động nhanh đều với gia tốc <span class="math inline">\(0.2\text{ m/s}^2\)</span>. Khoảng cách giữa hai người lúc đầu là <span class="math inline">\(130\text{ m}\)</span>. Hỏi sau bao lâu 2 người gặp nhau và vị trí gặp nhau.</p>
+<ul>
+<li>A. <span class="math inline">\(t = 20\text{ s}\)</span>; cách A <span class="math inline">\(60\text{ m}\)</span>.</li>
+<li>B. <span class="math inline">\(t = 17.5\text{ s}\)</span>; cách A <span class="math inline">\(56.9\text{ m}\)</span>.</li>
+<li>C. <span class="math inline">\(t = 20\text{ s}\)</span>; cách B <span class="math inline">\(60\text{ m}\)</span>.</li>
+<li>D. <span class="math inline">\(t = 17.5\text{ s}\)</span>; cách B <span class="math inline">\(56.9\text{ m}\)</span>.</li>
+</ul>
+<!-- ## Bài tập
+
+Bài 1. Một xe phải đi quãng đường 120 km trong 2.5 giờ. Trong 1.5 giờ đầu xe chuyển động với tốc độ trung bình 70 km/h. Tính tốc độ trung bình của xe trong suốt quãng đường còn lại.
+
+Bài 2. Vẽ đồ thị tọa ôộ-thời gian của vật chuyển ôộng thẳng có độ thì vận tốc-thời gian như đồ thị bên dưới. Vị trí ban đầu bằng 0 (Không cần thêm số cụ thể vào các trục).
+
+Bài 3. Hai vận động viên xe đạp, A và B, có vị trí ban đầu lần lượt là 0km và 70km. Tại thời điểm $t = 0$, hai người bắt đầu đạp về phía nhau với tốc độ lần lượt là 15 km/h và 20 km/h. Cùng lúc đó, một con ruồi đậu ở A bắt đầu bay về phía B với tốc độ không ỏổi là 30km/h. Khi gặp B nó ngay lập tức bay về phía A, đến khi gặp A lại lập tức bay về phía B, và cứ tiếp tục như vậy cho đến khi A và B gặp nhau.
+
+1. Xác định vị trí và thời điểm hai người gặp nhau.
+2. Quãng đơờng bay của con ruồi là bao nhiêu.
+
+Bài 4. Một vật chuyển động thẳng có đồ thị tọa độ-thời gian như sau.
+
+1. Tính tốc độ trung bình của cả cả hành trình.
+2. Tính vận tốc trung bình của cả hành trình.
+ -->
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./measure.html" class="pagination-link" aria-label="Đo lường và Sai số">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Đo lường và Sai số</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

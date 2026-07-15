@@ -1,25 +1,41 @@
 project:
   type: book
 
+lang: vi
+
+crossref:
+  fig-title: "Hình"
+  tbl-title: "Bảng"
+
 book:
-  title: "IB Programs"
-  author: "Norah Jones"
+  title: "Vật lý"
+  # author: "Norah Jones"
   date: "7/14/2026"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - measure.qmd
+    - motion.qmd
+    # - summary.qmd
+    # - references.qmd
 
-bibliography: references.bib
+# bibliography: references.bib
 
 format:
   html:
+    lang: vi
     theme:
       - cosmo
       - brand
-  pdf:
-    documentclass: scrreprt
+    toc: true
+    toc-depth: 6
+    number-sections: true
+    number-depth: 2
+    css: styles.css
+  # pdf:
+  #   documentclass: scrreprt
+  #   lang: vi
+  #   number-sections: true
+  #   number-depth: 2
 
 
 

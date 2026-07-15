@@ -1,0 +1,10 @@
+.quarto-figure,
+figure {
+  text-align: center;
+}
+
+.figure-caption,
+.table-caption,
+.caption {
+  text-align: center;
+}

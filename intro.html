@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="vi" xml:lang="vi"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction – IB Programs</title>
+<title>1&nbsp; Đo lường và Sai số – IB Programs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -91,6 +71,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -103,7 +112,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Đo lường và Sai số</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -137,7 +146,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Đo lường và Sai số</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -157,15 +166,31 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#đại-lượng-trong-vật-lý" id="toc-đại-lượng-trong-vật-lý" class="nav-link active" data-scroll-target="#đại-lượng-trong-vật-lý"><span class="header-section-number">1.1</span> Đại lượng trong vật lý</a>
+  <ul class="collapse">
+  <li><a href="#đại-lượng-và-đơn-vị" id="toc-đại-lượng-và-đơn-vị" class="nav-link" data-scroll-target="#đại-lượng-và-đơn-vị">Đại lượng và đơn vị</a></li>
+  <li><a href="#đơn-vị-cơ-bản-và-đơn-vị-dẫn-xuất" id="toc-đơn-vị-cơ-bản-và-đơn-vị-dẫn-xuất" class="nav-link" data-scroll-target="#đơn-vị-cơ-bản-và-đơn-vị-dẫn-xuất">Đơn vị cơ bản và Đơn vị dẫn xuất</a></li>
+  <li><a href="#số-có-nghĩa" id="toc-số-có-nghĩa" class="nav-link" data-scroll-target="#số-có-nghĩa">Số có nghĩa</a></li>
+  <li><a href="#ký-hiệu-khoa-học" id="toc-ký-hiệu-khoa-học" class="nav-link" data-scroll-target="#ký-hiệu-khoa-học">Ký hiệu khoa học</a></li>
+  </ul></li>
+  <li><a href="#không-chắc-chắn-và-sai-số" id="toc-không-chắc-chắn-và-sai-số" class="nav-link" data-scroll-target="#không-chắc-chắn-và-sai-số"><span class="header-section-number">1.2</span> Không chắc chắn và sai số</a>
+  <ul class="collapse">
+  <li><a href="#tính-toán-sai-số" id="toc-tính-toán-sai-số" class="nav-link" data-scroll-target="#tính-toán-sai-số">Tính toán sai số</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Đo lường và Sai số</span></h1>
 </div>
 
 
@@ -182,15 +207,67 @@ div.csl-indent {
 </header>
 
 
-<p>This is a book created from markdown and executable code.</p>
-<p>See <span class="citation" data-cites="knuth84">Knuth (<a href="references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
+<section id="đại-lượng-trong-vật-lý" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="đại-lượng-trong-vật-lý"><span class="header-section-number">1.1</span> Đại lượng trong vật lý</h2>
+<section id="đại-lượng-và-đơn-vị" class="level3">
+<h3 class="anchored" data-anchor-id="đại-lượng-và-đơn-vị">Đại lượng và đơn vị</h3>
+<p>Đại lượng vật lý là những thứ có thể đo lường được, chẳng hạn như khối lượng, độ dài, thời gian, cường độ dòng điện. Có thể chia đại lượng làm hai loại:</p>
+<ul>
+<li>Đại lượng cơ bản:</li>
+<li>Đại lượng dẫn xuất:</li>
+</ul>
+</section>
+<section id="đơn-vị-cơ-bản-và-đơn-vị-dẫn-xuất" class="level3">
+<h3 class="anchored" data-anchor-id="đơn-vị-cơ-bản-và-đơn-vị-dẫn-xuất">Đơn vị cơ bản và Đơn vị dẫn xuất</h3>
+<p>Đối với các đại lượng cơ bản, hệ đơn vị đo lường quốc tế (SI) sử dụng 7 đơn vị đo lường cơ bản:</p>
+<ol type="1">
+<li>Mét (m): khoảng cách ánh sáng di chuyển được trong chân không trong thời gian <span class="math inline">\({ \frac{1}{299 792 458} }\)</span> giây.</li>
+<li>Kilogram (kg): khối lượng của khối kilogram chuẩn quốc tế được Văn phòng Cân đo Quốc tế (BIPM) lưu giữ.</li>
+<li>Giây (s): khoảng thời gian bằng 9 192 631 770 lần chu kỳ của bức xạ điện từ phát ra bởi nguyên tử Caesium-133.</li>
+<li>Ampere (A):</li>
+<li>Kelvin (K)</li>
+<li>Mole (mol)</li>
+<li>Candela (cd)</li>
+</ol>
+<p>Đối với các đại lượng còn lại (đại lượng dẫn xuất), đơn vị đo được rút ra từ các đơn vị cơ bản thông qua các công thức tính. Ví dụ, đơn vị đo áp suất, (Pa) bằng m^-1 kg s^-2.</p>
+</section>
+<section id="số-có-nghĩa" class="level3">
+<h3 class="anchored" data-anchor-id="số-có-nghĩa">Số có nghĩa</h3>
+<p>Số có nghĩa là các chữ số quan trọng mang lại thông tin trong một kết quả hoặc số đo.</p>
+<p>Các quy tắc xác định số có nghĩa:</p>
+<ol type="1">
+<li>Các chữ số khác không luôn có nghĩa. Ví dụ, số 345 có 3 chữ số có nghĩa (3 s.f)</li>
+<li>Số 0 nằm giữa các số khác 0 cũng là số có nghĩa. Ví dụ, số 3405 có 4 chữ số có nghĩa (4 s.f)</li>
+<li>Số 0 nằm ngoài cùng bên trái thì không có nghĩa. Ví dụ, 0.345 (3 s.f), 0.034 (2 s.f)</li>
+<li>Số 0 nằm sau dấu thập phân và được viết sau một số khác 0 thì có nghĩa. Ví dụ, 1.034 (4 s.f); 1.00 (3 s.f); 0.34500 (5 s.f); 0.003 (1 s.f)</li>
+<li>Dãy số 0 ở đuôi không có nghĩa, trừ khi được viết cùng dấu thập phân. Ví dụ, 400 (1 s.f); 400. (3 s.f)</li>
+</ol>
+</section>
+<section id="ký-hiệu-khoa-học" class="level3">
+<h3 class="anchored" data-anchor-id="ký-hiệu-khoa-học">Ký hiệu khoa học</h3>
+</section>
+</section>
+<section id="không-chắc-chắn-và-sai-số" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="không-chắc-chắn-và-sai-số"><span class="header-section-number">1.2</span> Không chắc chắn và sai số</h2>
+<section id="tính-toán-sai-số" class="level3">
+<h3 class="anchored" data-anchor-id="tính-toán-sai-số">Tính toán sai số</h3>
+<p>Nếu <span class="math inline">\({ a = a_0 \pm \Delta a }\)</span>:</p>
+<ul>
+<li>Sai số tuyệt đối <span class="math inline">\({ = \Delta a }\)</span></li>
+<li>Sai số tương đối <span class="math inline">\({ = \frac{\Delta a}{a_0} }\)</span></li>
+<li>Sai số phần trăm <span class="math inline">\({ = \frac{\Delta a}{a_0} \times 100\% }\)</span></li>
+</ul>
+<p>Quy tắc cộng trừ: Nếu <span class="math inline">\({ Q = a + b }\)</span> hoặc <span class="math inline">\({ Q = a - b }\)</span> hoặc <span class="math inline">\({ Q = a + b - c }\)</span> thì sai số tuyệt đối của <span class="math inline">\({ Q }\)</span> bằng tổng các sai số tuyệt đối thành phần. <span class="math display">\[
+\begin{aligned}
+    Q = a + b &amp;\implies &amp; \Delta Q = \Delta a + \Delta b \\
+    Q = a - b &amp;\implies &amp; \Delta Q = \Delta a + \Delta b \\
+    Q = a + b - c &amp;\implies &amp; \Delta Q = \Delta a + \Delta b + \Delta c
+\end{aligned}
+\]</span></p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
-</div>
-</div>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

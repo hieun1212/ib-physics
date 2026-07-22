@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Physics",
+    "title": "Vật lý",
     "section": "",
     "text": "Preface",
     "crumbs": [
@@ -54,7 +54,7 @@
     "href": "measure.html#bài-tập",
     "title": "1  Đo lường và Sai số",
     "section": "1.4 Bài tập",
-    "text": "1.4 Bài tập\nBài 1. Xác định độ lớn và hướng của vector với thành phần cho như sau:\n\n\\({ A_x = -4.0 }\\) cm, \\({ A_y = -4.0 }\\) cm.\n\\({ A_x = 124 }\\) km, \\({ A_y = -158 }\\) km.\n\\({ A_x = 0 }\\), \\({ A_y = -5.0 }\\) m.\n\\({ A_x = 8.0 }\\) N, \\({ A_y = 0 }\\).\n\nBài 2. Cho vector \\({ A }\\) có độ lớn bằng 12.0 đơn vị, tạo với chiều dương của trục \\({ Ox }\\) một góc \\({ 30^\\circ }\\). Vector \\({ B }\\) có độ lớn bằng 8.0 đơn vị và tạo với chiều dương của trục \\({ Ox }\\) một góc \\({ 80^\\circ  }\\). Xác định\n\n\\({ A + B }\\)\n\\({ A - B }\\)\n\\({ A - 2B }\\)\n\nBài 3. Cho các thành phần của vector \\({ A }\\) và \\({ B }\\) như sau: \\({ A_x = 2.00, A_y = 3.00, B_x = -2.00, B_y = 5.00 }\\). Tìm độ lớn và hướng của vector sau\n\n\\({ A }\\)\n\\({ B }\\)\n\\({ A + B }\\)\n\\({ A - B }\\)\n\\({ 2A - B }\\)",
+    "text": "1.4 Bài tập\nBài 1. Bài tập 4.1, 4.4, 4.11, 4.12, 4.21 sách bài tập Toán lớp 10 - KNTT.\nBài 2. Một vector vận tốc có độ lớn 1.2 m/s hướng theo phương ngang. Một vector vận tốc khác có độ lớn 2.0 m/s. Biết tổng hai vector trên hướng lên theo phương thẳng đứng. Tìm độ lớn và hướng của vector vận tốc thứ 2.\nBài 3. Một người đi bộ 5.0 km về hướng Đông, sau đó đi 3.0 km theo hướng Bắc và đi tiếp 4.0 km theo hướng Đông. Xác định vị trí cuối cùng của người đó (so với vị trí ban đầu).\nBài 4. Một vật chuyển động theo quỹ đạo tròn có bán kính 3.0 m với vận tốc không đổi là 6.0 m/s. Vector vận tốc tại mọi thời điểm luôn nằm trên đường tiếp tuyến của quỹ đạo tròn. Vật đó xuất phát ở A (vị trí 12h), đi qua B (vị trí 3h) và đến C (vị trí 6h). Xác định sự thay đổi vector vận tốc giữa A và B, và giữa B và C.\nBài 5. Xác định các thành phần của vector W theo các trục thể hiện trong hình vẽ. \nBài 6. Trong mỗi hình sau, xác định thành phần của vector theo các trục tọa độ. Biết mỗi vector có độ dài 10.0 đơn vị. \nBài 7. Xác định độ lớn và hướng của vector với thành phần cho như sau:\n\n\\({ A_x = -4.0 }\\) cm, \\({ A_y = -4.0 }\\) cm.\n\\({ A_x = 124 }\\) km, \\({ A_y = -158 }\\) km.\n\\({ A_x = 0 }\\), \\({ A_y = -5.0 }\\) m.\n\\({ A_x = 8.0 }\\) N, \\({ A_y = 0 }\\).\n\nBài 8. Cho vector \\({ A }\\) có độ lớn bằng 12.0 đơn vị, tạo với chiều dương của trục \\({ Ox }\\) một góc \\({ 30^\\circ }\\). Vector \\({ B }\\) có độ lớn bằng 8.0 đơn vị và tạo với chiều dương của trục \\({ Ox }\\) một góc \\({ 80^\\circ  }\\). Xác định\n\n\\({ A + B }\\)\n\\({ A - B }\\)\n\\({ A - 2B }\\)\n\nBài 9. Cho các thành phần của vector \\({ A }\\) và \\({ B }\\) như sau: \\({ A_x = 2.00, A_y = 3.00, B_x = -2.00, B_y = 5.00 }\\). Tìm độ lớn và hướng của vector sau\n\n\\({ A }\\)\n\\({ B }\\)\n\\({ A + B }\\)\n\\({ A - B }\\)\n\\({ 2A - B }\\)",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Đo lường và Sai số</span>"
     ]

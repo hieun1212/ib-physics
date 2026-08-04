@@ -334,10 +334,11 @@ Hình&nbsp;2.1: Đồ thị độ dịch chuyển - thời gian của chuyển �
 <h3 class="anchored" data-anchor-id="chuyển-động-ném-ngang">Chuyển động ném ngang</h3>
 <p>Xét một vật được ném ngang từ điểm O ở độ cao H so với mặt đất. Chọn hệ quy chiếu như hình vẽ.</p>
 <p><strong>Xét theo phương Ox:</strong> vật chuyển động thẳng đều nên ta có:</p>
-<p><span class="math display">\[\begin{cases} v_x = v_0 \ x = v_x t = v_0 t \Rightarrow t = \dfrac{x}{v_0} \quad (1) \end{cases}\]</span></p>
+<p><span class="math display">\[v_x = v_0 \ x = v_x t = v_0 t \Rightarrow t = \dfrac{x}{v_0} \quad (1) \]</span></p>
 <p><strong>Xét theo phương Oy:</strong> vật rơi tự do với vận tốc ban đầu bằng 0 nên ta có:</p>
-<p><span class="math display">\[\begin{cases} v_y = gt \ y = \dfrac{1}{2}gt^2 \quad (2) \end{cases}\]</span></p>
-<p><strong>Thay (1) vào (2) ta được:</strong> <span class="math inline">\(y = \dfrac{1}{2}g \left(\dfrac{x}{v_0}\right)^2 = \dfrac{g}{2v_0^2} \cdot x^2\)</span>. Quỹ đạo chuyển động của vật là một nhánh Parabol.</p>
+<p><span class="math display">\[v_y = gt \ y = \dfrac{1}{2}gt^2 \quad (2) \]</span></p>
+<p><strong>Thay (1) vào (2) ta được:</strong> <span class="math inline">\(y = \dfrac{1}{2}g \left(\dfrac{x}{v_0}\right)^2 = \dfrac{g}{2v_0^2} \cdot x^2\)</span>.</p>
+<p><span class="math inline">\(\implies\)</span> Quỹ đạo chuyển động của vật là một nhánh Parabol.</p>
 <p><strong>Thời gian rơi:</strong> <span class="math display">\[y = H = \frac{1}{2}gt^2 \Rightarrow t = \sqrt{\frac{2H}{g}}\]</span></p>
 <p><strong>Tầm bay xa của vật theo phương ngang:</strong></p>
 <p><span class="math display">\[L = x_{\text{max}} = v_0 t = v_0 \sqrt{\frac{2H}{g}}\]</span></p>
@@ -347,16 +348,21 @@ Hình&nbsp;2.1: Đồ thị độ dịch chuyển - thời gian của chuyển �
 <section id="chuyển-động-ném-xiên" class="level3">
 <h3 class="anchored" data-anchor-id="chuyển-động-ném-xiên">Chuyển động ném xiên</h3>
 <p>Xét một vật được ném xiên từ điểm O trên mặt đất với vận tốc ban đầu <span class="math inline">\(\vec{v}_0\)</span> hợp với phương ngang một góc <span class="math inline">\(\alpha\)</span>.</p>
-<p><strong>Theo Ox vật chuyển động thẳng đều nên ta có:</strong></p>
-<p><span class="math display">\[\begin{cases} v_x = v_{0x} = v_0 \cos \alpha \ x = v_x t = v_0 \cos \alpha \cdot t \Rightarrow t = \dfrac{x}{v_0 \cos \alpha} \quad (1) \end{cases}\]</span></p>
-<p><strong>Theo Oy vật chuyển động thẳng biến đổi đều với gia tốc <span class="math inline">\(-\vec{g}\)</span>:</strong></p>
+<p>Theo Ox vật chuyển động thẳng đều nên ta có:</p>
+<p><span class="math display">\[
+\begin{align}
+  v_x &amp;= v_{0x} = v_0 \cos \alpha \ x = v_x t = v_0 \cos \alpha \cdot t \\
+  \Rightarrow t &amp;= \dfrac{x}{v_0 \cos \alpha} \quad (1)
+\end{align}
+\]</span></p>
+<p>Theo Oy vật chuyển động thẳng biến đổi đều với gia tốc <span class="math inline">\(-\vec{g}\)</span>:</p>
 <p><span class="math display">\[
   \begin{cases}
     v_{0y} = v_0 \sin \alpha \ v_y = v_{0y} - gt = v_0 \sin \alpha - gt \\
     y = v_{0y} t - \dfrac{1}{2}gt^2 = v_0 \sin \alpha \cdot t - \dfrac{1}{2}gt^2 \quad (2)
   \end{cases}
 \]</span></p>
-<p><strong>Thay (1) vào (2) ta được:</strong></p>
+<p>Thay (1) vào (2) ta được:</p>
 <p><span class="math display">\[y = v_0 \sin \alpha \cdot \frac{x}{v_0 \cos \alpha} - \frac{1}{2}g \left(\frac{x}{v_0 \cos \alpha}\right)^2 = -\frac{g}{2v_0^2 \cos^2 \alpha} x^2 + x \cdot \tan \alpha\]</span></p>
 <p><span class="math inline">\(\Rightarrow\)</span> Quỹ đạo là Parabol.</p>
 <p><strong>Thời gian từ lúc ném đến khi vật rơi chạm đất:</strong> khi chạm đất <span class="math inline">\(y = 0\)</span> từ (2) ta có:</p>

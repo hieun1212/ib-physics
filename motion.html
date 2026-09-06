@@ -353,17 +353,31 @@ Hình&nbsp;2.1: Đồ thị độ dịch chuyển - thời gian của chuyển �
 <section id="chuyển-động-ném-ngang" class="level3">
 <h3 class="anchored" data-anchor-id="chuyển-động-ném-ngang">Chuyển động ném ngang</h3>
 <p>Xét một vật được ném ngang từ điểm O ở độ cao H so với mặt đất. Chọn hệ quy chiếu như hình vẽ.</p>
-<p><strong>Xét theo phương Ox:</strong> vật chuyển động thẳng đều nên ta có:</p>
-<p><span class="math display">\[v_x = v_0 \ x = v_x t = v_0 t \Rightarrow t = \dfrac{x}{v_0} \quad (1) \]</span></p>
-<p><strong>Xét theo phương Oy:</strong> vật rơi tự do với vận tốc ban đầu bằng 0 nên ta có:</p>
-<p><span class="math display">\[v_y = gt \ y = \dfrac{1}{2}gt^2 \quad (2) \]</span></p>
-<p><strong>Thay (1) vào (2) ta được:</strong> <span class="math inline">\(y = \dfrac{1}{2}g \left(\dfrac{x}{v_0}\right)^2 = \dfrac{g}{2v_0^2} \cdot x^2\)</span>.</p>
-<p><span class="math inline">\(\implies\)</span> Quỹ đạo chuyển động của vật là một nhánh Parabol.</p>
-<p><strong>Thời gian rơi:</strong> <span class="math display">\[y = H = \frac{1}{2}gt^2 \Rightarrow t = \sqrt{\frac{2H}{g}}\]</span></p>
-<p><strong>Tầm bay xa của vật theo phương ngang:</strong></p>
-<p><span class="math display">\[L = x_{\text{max}} = v_0 t = v_0 \sqrt{\frac{2H}{g}}\]</span></p>
-<p><strong>Vận tốc của vật khi chạm đất:</strong></p>
-<p><span class="math display">\[v_{\text{cđ}} = \sqrt{v_x^2 + v_y^2} = \sqrt{v_0^2 + 2gH}\]</span></p>
+<p>Xét theo phương Ox: vật chuyển động thẳng đều nên ta có:</p>
+<p><span class="math display">\[
+\begin{case}
+  v_x = v_{0} \\
+  x = v_x t = v_{0}t \tag(1)
+\end{case}
+\]</span></p>
+<p>Xét theo phương Oy: vật rơi tự do với vận tốc ban đầu bằng 0 nên ta có:</p>
+<p><span class="math display">\[
+  \begin{dcases}
+  v_y = gt \\
+  y = \frac{1}{2} gt^2 \tag(2)
+  \end{dcases}
+\]</span></p>
+<p>Từ (1) ta rút ra được <span class="math inline">\(\displaystyle t = \frac{x}{v_{0}}\)</span>, thay vào (2): <span class="math display">\[
+  y = \frac{1}{2} g \left( \frac{x}{v_{0}} \right)^2 = \frac{g}{2v_{0}^2} x^2
+\]</span> Quỹ đạo chuyển động là một nhánh parabol.</p>
+<ul>
+<li>Thời gian rơi: $H = y = gt^2 t = $</li>
+<li>Tầm bay xa của vật theo phương ngang: $L = x_{} = v_{0}t = v_{0} $</li>
+<li>Vận tốc của vật tại một thời điểm bất kỳ: <span class="math inline">\(v = \sqrt{v_x ^2 + v_y ^2}\)</span></li>
+<li>Phương của vận tốc hợp với phương ngang một góc <span class="math inline">\(\alpha\)</span> <span class="math display">\[
+\tan \alpha = \frac{v_y}{v_x}
+\]</span></li>
+</ul>
 </section>
 <section id="chuyển-động-ném-xiên" class="level3">
 <h3 class="anchored" data-anchor-id="chuyển-động-ném-xiên">Chuyển động ném xiên</h3>
@@ -492,7 +506,8 @@ b. Tính quãng đường hòn đá rơi trong giây thứ 2.</p>
 <p><strong>Bài 4.</strong> Một vật rơi tự do, trong giây cuối cùng rơi được quãng đường 45m. Lấy <span class="math inline">\(g = 10\)</span> m/s<sup>2</sup>. Tính thời gian rơi và độ cao của vật rơi.</p>
 <p><strong>Bài 5.</strong> Từ đỉnh một tháp người ta thả rơi một vật. Một giây sau ở tầng thấp hơn 10m người ta buông rơi vật thứ 2. Hai vật chạm đất cùng một lúc. Tính thời gian rơi của vật thứ nhất. Lấy <span class="math inline">\(g = 10\)</span> m/s<sup>2</sup>.</p>
 <p><strong>Bài 6.</strong> Trong 2s cuối cùng trước khi chạm đất, một vật rơi tự do đi được quãng đường bằng 16/25 quãng đường toàn bộ mà nói rơi được. Tìm thời gian rơi và độ cao ban đầu của vật. Cho <span class="math inline">\(g = 10\)</span> m/s<sup>2</sup>.</p>
-<p><strong>Dạng 5. Chuyển động của vật bị ném</strong> <strong>Bài 1.</strong> Từ độ cao H = 10 m, người ta ném một vật lên cao theo phương thẳng đứng với vận tốc <span class="math inline">\(v_{0} = 20\)</span> m/s. Lấy <span class="math inline">\(g = 10\)</span> m/s<sup>2</sup>. Tính:<br>
+<p><strong>Dạng 5. Chuyển động của vật bị ném</strong></p>
+<p><strong>Bài 1.</strong> Từ độ cao H = 10 m, người ta ném một vật lên cao theo phương thẳng đứng với vận tốc <span class="math inline">\(v_{0} = 20\)</span> m/s. Lấy <span class="math inline">\(g = 10\)</span> m/s<sup>2</sup>. Tính:<br>
 a. Thời gian để vật lên đến độ cao cực đại và độ cao cực đại đó.<br>
 b. Vận tốc của vật khi rơi đến mặt đất và thời gian từ lúc ném vật đến lúc rơi đến đất.</p>
 <p><strong>Bài 2.</strong> Hai vật được ném thẳng đứng lên cao từ cùng một điểm với <span class="math inline">\(v_{0} = 25\)</span> m/s, vật II sau vật I khoảng thời gian <span class="math inline">\(t_{0} = 0.5\)</span> s. Lấy <span class="math inline">\(g = 10\)</span> m/s<sup>2</sup>.<br>

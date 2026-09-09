@@ -361,31 +361,85 @@ Hình&nbsp;2.1: Đồ thị độ dịch chuyển - thời gian của chuyển �
 <section id="chuyển-động-ném-ngang" class="level3">
 <h3 class="anchored" data-anchor-id="chuyển-động-ném-ngang">Chuyển động ném ngang</h3>
 <p>Xét một vật được ném ngang từ điểm O ở độ cao H so với mặt đất. Chọn hệ quy chiếu như hình vẽ.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/project_motion1.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Chuyển động ném ngang</figcaption>
+</figure>
+</div>
 <p>Xét theo phương Ox: vật chuyển động thẳng đều nên ta có:</p>
 <p><span class="math display">\[
 \begin{dcases}
   v_x = v_{0} \\
-  x = v_x t = v_{0}t
+  x = v_x t = v_{0}t \tag{1}
 \end{dcases}
 \]</span></p>
 <p>Xét theo phương Oy: vật rơi tự do với vận tốc ban đầu bằng 0 nên ta có:</p>
 <p><span class="math display">\[
   \begin{dcases}
   v_y = gt \\
-  y = \frac{1}{2} gt^2
+  y = \frac{1}{2} gt^2 \tag{2}
   \end{dcases}
 \]</span></p>
 <p>Từ (1) ta rút ra được <span class="math inline">\(\displaystyle t = \frac{x}{v_{0}}\)</span>, thay vào (2): <span class="math display">\[
   y = \frac{1}{2} g \left( \frac{x}{v_{0}} \right)^2 = \frac{g}{2v_{0}^2} x^2
 \]</span> Quỹ đạo chuyển động là một nhánh parabol.</p>
 <ul>
-<li>Thời gian rơi: $H = y = gt^2 t = $</li>
-<li>Tầm bay xa của vật theo phương ngang: $L = x_{} = v_{0}t = v_{0} $</li>
+<li>Thời gian rơi: <span class="math inline">\(\displaystyle H = y = \frac{1}{2}gt^2 \implies t = \sqrt{\frac{2H}{g}}\)</span></li>
+<li>Tầm bay xa của vật theo phương ngang: <span class="math inline">\(\displaystyle L = x_{\max} = v_{0}t = v_{0} \sqrt{\frac{2H}{g}}\)</span></li>
 <li>Vận tốc của vật tại một thời điểm bất kỳ: <span class="math inline">\(v = \sqrt{v_x ^2 + v_y ^2}\)</span></li>
-<li>Phương của vận tốc hợp với phương ngang một góc <span class="math inline">\(\alpha\)</span> <span class="math display">\[
+<li>Phương của vận tốc hợp với phương ngang một góc <span class="math inline">\(\alpha\)</span>: <span class="math display">\[
 \tan \alpha = \frac{v_y}{v_x}
 \]</span></li>
 </ul>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">None</span>Ví dụ
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Ví dụ 1.</strong> Một mũi tên được phóng đi theo phương ngang từ đỉnh một toà tháp cao 35 m. Vận tốc ban đầu là 30 m/s. Giả sử lực cản không khí là không đang kể. Tính:<br>
+a. Thời gian mũi tên bay đến khi chạm đất.<br>
+b. Khoảng cách từ chân tháp đến nơi mũi tên chạm đất.<br>
+c.&nbsp;Vận tốc của mũi tên khi chạm đất.</p>
+<div class="text-center">
+<p><strong>Giải</strong></p>
+</div>
+<p>Chọn hệ quy chiếu với gốc toạ độ tại đỉnh tháp, trục <span class="math inline">\(Ox\)</span> hướng từ trái sang phải, trục <span class="math inline">\(Oy\)</span> hướng xuống dưới. Ta có: <span class="math display">\[
+  \begin{dcases}
+    v_{0x} = v_{0} = 30 \\
+    v_{0y} = 0
+  \end{dcases}
+\]</span> Phương trình vận tốc và chuyển động theo các phương Ox, Oy là: <span class="math display">\[
+  \begin{dcases}
+    v_x = v_{0x} = 30 \\
+    v_y = v_{0y} + at = 9.8 \cdot t \\
+    x = x_{0} + v_{0x}t = 30\cdot t \\
+    y = y_{0} + v_{0y}t + \frac{at^2}{2} = 4.5 \cdot t^2
+  \end{dcases}
+\]</span> a. Mũi tên chạm đất khi <span class="math inline">\(y = 35\)</span> m: <span class="math display">\[ 4.5 \cdot t^2 = 35 \quad \text{hay} \quad  t = 2.67 \text{s} \]</span></p>
+<ol start="2" type="a">
+<li><p>Khoảng cách từ chân cột đến điểm rơi: <span class="math display">\[ x = 30\cdot t = 30 \cdot 2.67 = 80.1 ~\text{m} \]</span></p></li>
+<li><p>Để tính vận tốc của mũi tên, ta tính vận tốc theo phương Ox và Oy. Ta có <span class="math inline">\(v_x = 30\)</span> m/s, <span class="math inline">\(v_y = 9.8 \cdot t = 9.8 \times 2.67 = 26.2\)</span> m/s.</p></li>
+</ol>
+<p>Vận tốc của mũi tên là: <span class="math inline">\(v = \sqrt{v_x ^2 + v_y ^2} = \sqrt{30^2 + 26.2^2} = 39.8\)</span> m/s. Góc của vận tốc so với phương ngang là <span class="math display">\[
+  \tan \alpha = \frac{v_y}{v_x} = \frac{26.2}{30} \Rightarrow \alpha = 41^\circ
+\]</span></p>
+<p><strong>Ví dụ 2.</strong> Một vật được ném theo phương ngang từ một con tàu và rơi xuống biển sau 1.6 s ở vị trí cách con tàu 37 m. Tính:<br>
+a. Vận tốc ban đầu của vật. b. Độ cao ban đầu của vật so với mực nước biển.</p>
+<div class="text-centered">
+<p>Giải</p>
+</div>
+<p>Chọn gốc toạ độ tại vị trí ném vật, trục Ox hướng sang phải, trục Oy hướng xuống dưới.<br>
+a. Vật di chuyển 37 m theo chiều ngang trong 1.6 s, vận tốc theo phương ngang là <span class="math inline">\(v = v_x = \frac{37}{1.6} = 23\)</span> m/s.<br>
+b. Phương trình chuyển động của vật theo phương Oy là: <span class="math inline">\(y = y_{0} + v_{0y}t + \frac{at^2}{2} = 4.5 \cdot t^2\)</span>.</p>
+<p>Vật chuyển động trong 1.6 s, nên chiều cao là <span class="math inline">\(y = 4.5 \cdot 1.6^2 = 12.5\)</span> m.</p>
+</div>
+</div>
 </section>
 <section id="chuyển-động-ném-xiên" class="level3">
 <h3 class="anchored" data-anchor-id="chuyển-động-ném-xiên">Chuyển động ném xiên</h3>

@@ -438,30 +438,34 @@ b. Phương trình chuyển động của vật theo phương Oy là: <span clas
 </section>
 <section id="chuyển-động-ném-xiên" class="level3">
 <h3 class="anchored" data-anchor-id="chuyển-động-ném-xiên">Chuyển động ném xiên</h3>
-<p>Xét một vật được ném xiên từ điểm O trên mặt đất với vận tốc ban đầu <span class="math inline">\(\vec{v}_0\)</span> hợp với phương ngang một góc <span class="math inline">\(\alpha\)</span>.</p>
-<p>Theo Ox vật chuyển động thẳng đều nên ta có:</p>
-<p><span class="math display">\[
-\begin{align}
-  v_x &amp;= v_{0x} = v_0 \cos \alpha \ x = v_x t = v_0 \cos \alpha \cdot t \\
-  \Rightarrow t &amp;= \dfrac{x}{v_0 \cos \alpha} \quad (1)
-\end{align}
+<p>Xét một vật được ném xiên từ điểm O trên mặt đất với vận tốc ban đầu <span class="math inline">\(\vec{v}_0\)</span> hợp với phương ngang một góc <span class="math inline">\(\theta\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/project_motion2.png" class="img-fluid figure-img"></p>
+<figcaption>Chuyển động ném xiên</figcaption>
+</figure>
+</div>
+<p>Theo <span class="math inline">\(Ox\)</span> vật chuyển động thẳng đều. Theo phương <span class="math inline">\(Oy\)</span> vật chuyển động có gia tốc <span class="math inline">\(-g\)</span>. Do đó: <span class="math display">\[
+  \begin{align}
+    v_x &amp;= v_{0x} = v_{0}\cos \theta \\
+    v_y &amp;= v_{0y} - gt = v_{0}\sin \theta - gt
+  \end{align}
 \]</span></p>
-<p>Theo Oy vật chuyển động thẳng biến đổi đều với gia tốc <span class="math inline">\(-\vec{g}\)</span>:</p>
-<p><span class="math display">\[
-  \begin{cases}
-    v_{0y} = v_0 \sin \alpha \ v_y = v_{0y} - gt = v_0 \sin \alpha - gt \\
-    y = v_{0y} t - \dfrac{1}{2}gt^2 = v_0 \sin \alpha \cdot t - \dfrac{1}{2}gt^2 \quad (2)
-  \end{cases}
+<p>Phương trình chuyển động của vật trên hai phương <span class="math inline">\(Ox\)</span> và <span class="math inline">\(Oy\)</span> là: <span class="math display">\[
+  \begin{align}
+    x &amp;= v_x t = v_{0} t \cos \theta \tag{1} \\
+    y &amp;= v_{0y}t - \frac{1}{2}gt^2 = v_{0}t \sin \theta - \frac{1}{2}gt^2 \tag{2}
+  \end{align}
 \]</span></p>
-<p>Thay (1) vào (2) ta được:</p>
-<p><span class="math display">\[y = v_0 \sin \alpha \cdot \frac{x}{v_0 \cos \alpha} - \frac{1}{2}g \left(\frac{x}{v_0 \cos \alpha}\right)^2 = -\frac{g}{2v_0^2 \cos^2 \alpha} x^2 + x \cdot \tan \alpha\]</span></p>
-<p><span class="math inline">\(\Rightarrow\)</span> Quỹ đạo là Parabol.</p>
-<p><strong>Thời gian từ lúc ném đến khi vật rơi chạm đất:</strong> khi chạm đất <span class="math inline">\(y = 0\)</span> từ (2) ta có:</p>
-<p><span class="math display">\[t = \frac{2v_0 \sin \alpha}{g}\]</span></p>
-<p><strong>Tầm bay xa theo phương ngang:</strong></p>
-<p><span class="math display">\[L = x_{\text{max}} = v_0 \cos \alpha \cdot \frac{2v_0 \sin \alpha}{g} = \frac{v_0^2 \sin 2\alpha}{g}\]</span></p>
-<p><strong>Tầm bay cao:</strong></p>
-<p><span class="math display">\[H = y_{\text{max}} = \frac{v_0^2 \sin^2 \alpha}{2g}\]</span></p>
+<p>Từ (1) ta được <span class="math display">\[
+  t = \frac{x}{v_{0} \cos \theta }
+\]</span> thay vào (2): <span class="math display">\[y = v_0 \sin \theta  \cdot \frac{x}{v_0 \cos \theta} - \frac{1}{2}g \left(\frac{x}{v_0 \cos \theta }\right)^2 = -\frac{g}{2v_0^2 \cos^2 \theta} x^2 + x \tan \theta \]</span></p>
+<p>Vậy quỹ đạo chuyển động là một đường parabol.</p>
+<p>Vận tốc trên phương <span class="math inline">\(Oy\)</span> thoả: <span class="math display">\[
+  v_y ^2 - v_{0y}^2 = -2gt
+\]</span> Mà <span class="math inline">\(v^2 = v_y ^2 + v_x ^2\)</span> và <span class="math inline">\(v_0 ^2 = v_{0y}^2 + v_{0x}^2\)</span>. Hơn nữa, <span class="math inline">\(v_{0x}^2 = v_x ^2\)</span> nên <span class="math display">\[
+  v^2 - v_{0}^2 = -2gt \tag{*}
+\]</span></p>
 </section>
 </section>
 <section id="tính-tương-đối-của-chuyển-động---công-thức-cộng-vận-tốc" class="level2" data-number="2.7">

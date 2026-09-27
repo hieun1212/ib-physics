@@ -31,6 +31,7 @@ format:
     number-sections: true
     number-depth: 2
     css: styles.css
+
   # pdf:
   #   documentclass: scrreprt
   #   lang: vi

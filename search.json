@@ -148,5 +148,25 @@
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Động học</span>"
     ]
+  },
+  {
+    "objectID": "forces.html",
+    "href": "forces.html",
+    "title": "3  Động lực học",
+    "section": "",
+    "text": "3.1 Lực\nLực là một đại lượng vector đặc trưng cho tác dụng của vật này lên vật khác. Đơn vị của lực là Newton (N).\nBiểu diễn lực: Lực được biểu diễn bằng một vector có:\nTổng hợp lực. Tổng hợp lực là thay thế nhiều lực tác dụng đồng thời vào một vật bằng một lực có tác dụng giống hết như những lực ấy. \\[\n  \\vec{F} = \\vec{F}_1 + \\vec{F}_2 + \\cdots + \\vec{F}_n\n\\] Lực thay thế này được gọi là hợp lực. Các lực được thay thế gọi là các lực thành phần.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Động lực học</span>"
+    ]
+  },
+  {
+    "objectID": "forces.html#lực",
+    "href": "forces.html#lực",
+    "title": "3  Động lực học",
+    "section": "",
+    "text": "Gốc: là điểm đặt của lực\nPhương và chiều: là phương và chiều của lực\nĐộ dài: biểu thị độ lớn của lực.\n\n\n\nBài tập\nBài 1. Cho ba lực đồng quy, cùng nằm trong một mặt phẳng, có độ lớn bằng nhau và từng đôi một làm thành góc \\(120^\\circ\\). Chứng minh rằng đó là hệ lực cân bằng nhau.\nBài 2. Lực \\(\\vec{F}\\) phải có giá trị bao nhiêu để kéo đều một vật có khối lượng \\(m\\) trượt đều trên mặt phẳng ngang? Biết \\(\\vec{F}\\) hợp với phương ngang một góc \\(\\alpha = 60^\\circ\\) và lực ma sát giữa vật và mặt phẳng ngang bằng 20 N.\nBài 3. Vật \\(m = 1\\) kg treo tại trung điểm C của dây AB. Tính lực căng dây AC và BC, biết \\(\\alpha = 30^\\circ\\). Lấy \\(g = 10\\) m/s2.\nBài 4. Một đèn tín hiệu giao thông được treo ở ngã tư nhờ một dây cáp có trọng lượng không đáng kể. Hai đầu dây cáp được giữ bằng hai cột đèn AA’ và BB’ cách nhau 8 m. Trọng lượng đèn là 60 N, được treo vào điểm giữa O của dây cáp, làm dây võng xuống 0,5 m. Tính lực căng của dây.\nBài 5. Một vật \\(m = 1.2\\) kg được treo như hình vẽ. Thanh ngang có khối lượng không đáng kể, dây không dãn. Biết AB = 20 cm, AC = 48cm. Lấy g = 10 m/s2. Tính\na. Lực căng của dây treo.\nb. Phản lực của bức tường tác dụng lên thanh AB.\nBài 6. Quả cầu \\(m = 4\\) kg, bán kính \\(R = 15\\) cm tựa vào tường trơn nhẵn và được giữ nằm yên nhờ một dây treo gắn vào tường tại A, chiều dài dây AB = 15 cm. Tìm lực căng của dây và lực nén của quả cầu lên bức tường. Lấy g = 10 m/s2; \\(\\sqrt{3} = 1.7\\)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Động lực học</span>"
+    ]
   }
 ]
